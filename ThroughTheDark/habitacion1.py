@@ -3,7 +3,7 @@ import constantes
 import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
-
+import enemigos
 
 class Habitacion_1(Level):
     ''' Clase que define el primer nivel.
@@ -58,3 +58,14 @@ class Habitacion_1(Level):
         bloque.jugador = self.jugador
         bloque.nivel = self
         self.lista_plataformas.add(bloque)
+        
+        #enemigos
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 250
+        ene.rect.y = 200
+        ene.limite_izquierdo = 200
+        ene.limite_derecho = 300
+        ene.mover_x = 1
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_plataformas.add(ene)
