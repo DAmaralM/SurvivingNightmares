@@ -9,7 +9,7 @@ from funciones_spritesheet import SpriteSheet
 #   Ancho del sprite
 #   Alto del sprite
 
-STONE            = (0, 0, 36, 35)
+STONE            = (0, 0, 42, 60)
 
 
 class Plataforma(pygame.sprite.Sprite):
@@ -18,7 +18,7 @@ class Plataforma(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet_data):
         """ Plataforma constructor."""
         pygame.sprite.Sprite.__init__(self)
-        sprite_sheet = SpriteSheet("imagenes/stone.png")
+        sprite_sheet = SpriteSheet("imagenes/stoone.png")
         # Grab the image for this platform
         self.image = sprite_sheet.obtener_imagen(sprite_sheet_data[0],
                                             sprite_sheet_data[1],

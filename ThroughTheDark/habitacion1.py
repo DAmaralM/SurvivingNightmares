@@ -34,6 +34,9 @@ class Habitacion_1(Level):
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ [platforma.STONE, 300, 300],
+                  [platforma.STONE, 300, 600],
+                  [platforma.STONE, 600, 300],
+                  [platforma.STONE, 600, 600],
                  ]
 
 
