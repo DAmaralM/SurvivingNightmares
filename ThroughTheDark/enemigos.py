@@ -22,17 +22,12 @@ class Enemigo(pygame.sprite.Sprite):
         sprite_sheet = SpriteSheet("imagenes/slime.png")
             
         #Recorte
-        imagen = sprite_sheet.obtener_imagen(0, 0, 77, 115)
+        imagen = sprite_sheet.obtener_imagen(0, 12, 84, 84)
         self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(274, 138, 78, 114)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(274, 274, 85, 114)
-        self.jugador_frame_der.append(imagen)
-        imagen = sprite_sheet.obtener_imagen(284, 399, 78, 113)
+        imagen = sprite_sheet.obtener_imagen(102, 0, 92, 93)
         self.jugador_frame_der.append(imagen)
 
 
-        
         self.image = self.jugador_frame_der[0]
         self.rect = self.image.get_rect()
 
