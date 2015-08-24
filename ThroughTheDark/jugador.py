@@ -3,6 +3,7 @@ import pygame
 from funciones_spritesheet import SpriteSheet
 
 
+
 class Jugador(pygame.sprite.Sprite):
     """Clase utilizada para desarrollar los jugadores del juego. """
     
@@ -22,7 +23,7 @@ class Jugador(pygame.sprite.Sprite):
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
     jugador = 1
-    
+    puntos = 0
     # -- Metodos
     def __init__(self, jugador):
         """ __Funcion constructor__ 
@@ -163,6 +164,14 @@ class Jugador(pygame.sprite.Sprite):
                 self.rect.bottom = block.rect.top
             elif(self.mover_y < 0):
                 self.rect.top = block.rect.bottom
+
+        lista_puntos_a_obtener = pygame.sprite.spritecollide(self, self.nivel.lista_puntos, False)
+        for una_comida in lista_puntos_a_obtener:
+            una_comida.kill()
+            self.puntos += 1
+            una_comida.hacer_sonido()
+
+
 
 
     def izquierda(self):

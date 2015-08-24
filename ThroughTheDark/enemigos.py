@@ -75,32 +75,9 @@ class MovingPlatform(Enemigo):
             frame = (pos // 30) % len(self.jugador_frame_izq)
             self.image = self.jugador_frame_izq[frame]
             
-        # Verficiamos si colisionamos con alguna plataforma
-        lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
-        for block in lista_de_bloques_colisionados:
-            if self.mover_x > 0:
-                self.rect.right = block.rect.left
-            elif self.mover_x < 0:
-                self.rect.left = block.rect.right
- 
-        self.rect.y += self.mover_y
+            
 
-        lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
-        for block in lista_de_bloques_colisionados:
-            if self.mover_y > 0:
-                self.rect.bottom = block.rect.top
-            elif self.mover_y < 0:
-                self.rect.top = block.rect.bottom
 
-            self.mover_y = 0
-
-            if isinstance(block, MovingPlatform):
-                self.rect.x += block.mover_x
-                
-        cur_pos = self.rect.x - self.nivel.limite_derecho
-        if cur_pos < self.boundary_left or cur_pos > self.boundary_right:
-            self.mover_x *= -1
-            self.izquierda = not (self.izquierda)
             
 
 

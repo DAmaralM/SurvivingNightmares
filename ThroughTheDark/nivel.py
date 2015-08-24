@@ -9,10 +9,12 @@ class Level():
     # Lista de todos los sprites utilizados en todos los niveles.  
     lista_plataformas = None
     lista_enemigos = None
-
+    lista_puntos = None 
+    
+    
+    
     # Imagen de fondo
     fondo = None
-
     # Valor numerico de que tan lejos avanzo nuestro jugador en el nivel
     posicion_jugador_nivel = 0
     limite_derecho = -1000
@@ -26,6 +28,7 @@ class Level():
         """ Constructor. Se le debe pasar al jugador para saber sobre que nivel esta. """
         self.lista_plataformas = pygame.sprite.Group()
         self.lista_enemigos = pygame.sprite.Group()
+        self.lista_puntos = pygame.sprite.Group()
         self.jugador = jugador
 
 
@@ -33,17 +36,20 @@ class Level():
         """ Actualizar todo sobre el nivel """
         self.lista_plataformas.update()
         self.lista_enemigos.update()
-
+        self.lista_puntos.update()
+    
+    
     def draw(self, pantalla):
         """ Dibujamos todo sobre el nivel. """
 
         # Se debe dibujar el fondo.
-        pantalla.fill(constantes.AZUL)
+        pantalla.fill(constantes.NEGRO)
         pantalla.blit(self.fondo,(self.posicion_jugador_nivel // 3,0))
 
         # Se dibujan todos los sprite que se cargaron.
         self.lista_plataformas.draw(pantalla)
         self.lista_enemigos.draw(pantalla)
+        self.lista_puntos.draw(pantalla)
 
     def avance_nivel(self, avance_x):
         """ Cuando el usuario se mueve de izquierda/derecha se debe mover el nivel """
@@ -55,3 +61,6 @@ class Level():
 
         for enemigo in self.lista_enemigos:
             enemigo.rect.x += avance_x
+
+        for comidas in self.lista_puntos:
+            comidas.rect.x += avance_x 

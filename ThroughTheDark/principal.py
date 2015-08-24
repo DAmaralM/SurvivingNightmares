@@ -15,11 +15,17 @@ def main():
     tamanio = [constantes.ANCHO_PANTALLA, constantes.LARGO_PANTALLA]
     pantalla = pygame.display.set_mode(tamanio)
 
-    pygame.display.set_caption("Through The Dark")
+    pygame.display.set_caption("Lost stars")
+    sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
+    sonido.play()
+    
 
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(2)
 
+    letraParaPuntos = pygame.font.Font(None,64)
+    
+    
     # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Habitacion_1(jugador_principal))
@@ -108,7 +114,11 @@ def main():
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
-
+        
+        textoPuntos = letraParaPuntos.render("Puntos: "+str(jugador_principal.puntos),1,constantes.BLANCO)
+        pantalla.blit(textoPuntos,(10,10))
+        
+        
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 
         clock.tick(60)

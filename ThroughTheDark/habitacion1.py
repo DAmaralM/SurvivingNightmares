@@ -4,6 +4,7 @@ import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
 import enemigos
+from puntos import Estrellas, ESTRELLA
 
 class Habitacion_1(Level):
     ''' Clase que define el primer nivel.
@@ -40,6 +41,8 @@ class Habitacion_1(Level):
                  ]
 
 
+
+       
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
             bloque = platforma.Plataforma(plataforma[0])
@@ -48,6 +51,17 @@ class Habitacion_1(Level):
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
 
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 360
+        puntos.rect.y = 280
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE)
         bloque.rect.x = 1350
@@ -61,10 +75,10 @@ class Habitacion_1(Level):
         
         #enemigos
         ene = enemigos.MovingPlatform()
-        ene.rect.x = 400
+        ene.rect.x = 300
         ene.rect.y = 418
-        ene.limite_izquierdo = 400
-        ene.limite_derecho = 500
+        ene.limite_izquierdo = 280
+        ene.limite_derecho = 400
         ene.mover_x = 1
         ene.jugador = self.jugador
         ene.nivel = self

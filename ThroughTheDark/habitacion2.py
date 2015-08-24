@@ -23,10 +23,17 @@ class Habitacion_2(Level):
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_2 = sprite_sheet_pantalla.obtener_imagen(1788,894, 896,894)
         self.fondo = imagen_2
+        
+        self.fondo.set_colorkey(constantes.BLANCO)
+        self.limite_derecho = 740
+        self.limite_izquierdo = 88
+        self.limite_superior = -20
+        self.limite_inferior = 675
+        self.cambio_nivel_x = 396
+        self.cambio_nivel_y = -16
 
         
         self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -2500
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ #[platforma.GRASS_LEFT, , 500],
