@@ -61,10 +61,10 @@ class Habitacion_1(Level):
         
         #enemigos
         ene = enemigos.MovingPlatform()
-        ene.rect.x = 250
-        ene.rect.y = 200
-        ene.limite_izquierdo = 200
-        ene.limite_derecho = 300
+        ene.rect.x = 400
+        ene.rect.y = 418
+        ene.limite_izquierdo = 400
+        ene.limite_derecho = 500
         ene.mover_x = 1
         ene.jugador = self.jugador
         ene.nivel = self
