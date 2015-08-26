@@ -8,9 +8,11 @@ import jugador
 from jugador import Jugador
 
 
+
 class Enemigo(pygame.sprite.Sprite):
 
     izquierda = True
+    muerte = 0
     jugador_frame_izq = []
     jugador_frame_der = []
     jugador_frame_up = []    
@@ -45,13 +47,13 @@ class MovingPlatform(Enemigo):
     mover_x = 0
     mover_y = 0
 
-    boundary_top = 0
-    boundary_bottom = 0
-    boundary_left = 0
-    boundary_right = 0
+    limite_superior = 0
+    limite_inferior = 0
+    limite_izquierdo = 0
+    limite_derecho = 0
 
     nivel = None
-    player = None
+    jugador = None
 
     def update(self):
         """ Move the platform.
@@ -74,6 +76,21 @@ class MovingPlatform(Enemigo):
         else:
             frame = (pos // 30) % len(self.jugador_frame_izq)
             self.image = self.jugador_frame_izq[frame]
+            
+        if self.rect.bottom > self.limite_inferior or self.rect.top < self.limite_superior:
+            self.mover_y *= -1
+
+        cur_pos = self.rect.x - self.nivel.cambio_nivel_x
+        if cur_pos < self.limite_izquierdo or cur_pos > self.limite_derecho:
+            self.mover_x *= -1
+        
+        hit = pygame.sprite.collide_rect(self, self.jugador)
+        if hit:
+            self.kill()
+        
+
+            
+            
             
             
 

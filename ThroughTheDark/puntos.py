@@ -19,7 +19,7 @@ class Estrellas(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet_data):
         """ Plataforma constructor."""
         pygame.sprite.Sprite.__init__(self)
-        sprite_sheet = SpriteSheetNegro("imagenes/puntos.png")
+        sprite_sheet = SpriteSheet("imagenes/puntos.png")
         self.sonido_comida = pygame.mixer.Sound("sonidos/agarrar_puntos.ogg")
         
         # Grab the image for this platform

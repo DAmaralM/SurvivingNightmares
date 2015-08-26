@@ -5,6 +5,7 @@ from habitacion1 import Habitacion_1
 from habitacion2 import Habitacion_2
 
 from jugador import Jugador
+import enemigos
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
     
 
     # Creamos al jugador con la imagen p1_walk.png
-    jugador_principal = Jugador(2)
+    jugador_principal = Jugador(1)
 
     letraParaPuntos = pygame.font.Font(None,64)
     
@@ -51,7 +52,7 @@ def main():
     while not salir:
         for evento in pygame.event.get(): 
             if evento.type == pygame.QUIT: 
-                salir = True 
+                salir = True
 
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_LEFT:
@@ -85,21 +86,6 @@ def main():
         # Actualiza los elementos del nivel
         nivel_actual.update()
 
-
-        # Si el jugador se acarca hacia el lado derecho mueve el mundo hacia la izquierda (-x)
-        #if jugador_principal.rect.x >= 500:
-         #   diff = jugador_principal.rect.x - 500
-          #  jugador_principal.rect.x = 500
-           # nivel_actual.avance_nivel(-diff)
-
-
-        # Si el jugador se acarca hacia el lado izquierda mueve el mundo hacia la derecha (-x)
-       # if jugador_principal.rect.x <= 120:
-        #    diff = 120 - jugador_principal.rect.x
-         #   jugador_principal.rect.x = 120
-          #  nivel_actual.avance_nivel(diff)
-
-
         #Si el jugador se mueve hacia el fin del nivel cambia el jugador al siguiente nivel.
         if ((jugador_principal.rect.x >= nivel_actual.cambio_nivel_x-2 or jugador_principal.rect.x >= nivel_actual.cambio_nivel_x-2)  and jugador_principal.rect.y == nivel_actual.cambio_nivel_y):
             jugador_principal.rect.x = 120
@@ -124,6 +110,9 @@ def main():
         clock.tick(60)
 
         pygame.display.flip()
+        
+            
+    return done
 
     pygame.quit()
 
