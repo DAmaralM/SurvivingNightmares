@@ -61,6 +61,25 @@ class Habitacion_1(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 600
+        puntos.rect.y = 450
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)        
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 150 
+        puntos.rect.y = 600
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)        
         
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE)

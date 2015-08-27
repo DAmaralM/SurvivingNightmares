@@ -29,8 +29,8 @@ class Habitacion_2(Level):
         self.limite_izquierdo = 88
         self.limite_superior = -20
         self.limite_inferior = 675
-        self.cambio_nivel_x = 396
-        self.cambio_nivel_y = -16
+        self.cambio_nivel_x = 92
+        self.cambio_nivel_y = 388
 
         
         self.fondo.set_colorkey(constantes.BLANCO)
