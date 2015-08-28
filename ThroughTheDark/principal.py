@@ -93,6 +93,8 @@ def main():
                 numero_del_nivel_actual += 1
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
                 jugador_principal.nivel = nivel_actual
+                jugador_principal.rect.x = 400
+                jugador_principal.rect.y = 600
 
 
         print "Posicion x", jugador_principal.rect.x, "Posicion y", jugador_principal.rect.y

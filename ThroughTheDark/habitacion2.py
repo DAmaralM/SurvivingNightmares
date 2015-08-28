@@ -1,8 +1,11 @@
 import pygame
 import constantes
 import platforma
+import enemigos
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
+from puntos import Estrellas, ESTRELLA
+
 
 
 class Habitacion_2(Level):
@@ -36,8 +39,20 @@ class Habitacion_2(Level):
         self.fondo.set_colorkey(constantes.BLANCO)
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ #[platforma.GRASS_LEFT, , 500],
-                 ]
+        nivel = [ [platforma.STONE, 200 ,500],
+                  
+                  [platforma.STONE, 250, 450 ],
+                  [platforma.STONE, 300, 400 ],
+                  [platforma.STONE, 350, 350 ],
+                  [platforma.STONE, 400, 300 ],
+                  [platforma.STONE, 450, 300 ],
+                  [platforma.STONE, 500, 350 ],
+                  [platforma.STONE, 550, 400 ],
+                  [platforma.STONE, 600, 450 ],
+                  [platforma.STONE, 650, 500 ],
+                  
+                  
+                  ]                  
 
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -47,7 +62,199 @@ class Habitacion_2(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
+        #Puntos
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 100
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+            
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 150
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 200
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 250
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 300
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 350
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 400
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 450
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
 
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 500
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 550
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 600
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 650
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 700
+        puntos.rect.y = 103
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 750
+        puntos.rect.y = 153
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        #Puntos de abajo
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 100
+        puntos.rect.y = 750
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 430
+        puntos.rect.y = 380
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 750
+        puntos.rect.y = 750
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        #Enemigos
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 300
+        ene.rect.y = 200
+        ene.limite_izquierdo = -3
+        ene.limite_derecho = 285
+        ene.mover_x = 1
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_plataformas.add(ene)
+        
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 600
+        ene.rect.y = 200
+        ene.limite_izquierdo = 400
+        ene.limite_derecho = 600
+        ene.mover_x = 1
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_plataformas.add(ene)
+        
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE)
         bloque.rect.x = 1350

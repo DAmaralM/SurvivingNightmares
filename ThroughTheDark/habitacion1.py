@@ -33,6 +33,7 @@ class Habitacion_1(Level):
         self.cambio_nivel_x = 396
         self.cambio_nivel_y = -16
 
+
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ [platforma.STONE, 300, 300],
                   [platforma.STONE, 300, 600],
@@ -52,8 +53,8 @@ class Habitacion_1(Level):
             self.lista_plataformas.add(bloque)
 
         puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 360
-        puntos.rect.y = 280
+        puntos.rect.x = 700
+        puntos.rect.y = 200
         puntos.limite_izquierdo = 1350
         puntos.limite_derecho = 1600
         puntos.mover_x = 1
@@ -62,8 +63,8 @@ class Habitacion_1(Level):
         self.lista_puntos.add(puntos)
         
         puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 600
-        puntos.rect.y = 450
+        puntos.rect.x = 700
+        puntos.rect.y = 400
         puntos.limite_izquierdo = 1350
         puntos.limite_derecho = 1600
         puntos.mover_x = 1
@@ -72,14 +73,35 @@ class Habitacion_1(Level):
         self.lista_puntos.add(puntos)        
         
         puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 150 
+        puntos.rect.x = 700
         puntos.rect.y = 600
         puntos.limite_izquierdo = 1350
         puntos.limite_derecho = 1600
         puntos.mover_x = 1
         puntos.jugador = self.jugador
         puntos.nivel = self
-        self.lista_puntos.add(puntos)        
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 160
+        puntos.rect.y = 400
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 160 
+        puntos.rect.y = 600
+        puntos.limite_izquierdo = 1350
+        puntos.limite_derecho = 1600
+        puntos.mover_x = 1
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
         
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE)
