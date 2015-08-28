@@ -1,5 +1,5 @@
 import pygame
-
+import nivel
 from funciones_spritesheet import SpriteSheet
 
 
@@ -22,6 +22,7 @@ class Jugador(pygame.sprite.Sprite):
 
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
+    vidas = 3
     jugador = 1
     puntos = 0
     # -- Metodos
@@ -170,6 +171,11 @@ class Jugador(pygame.sprite.Sprite):
             una_comida.kill()
             self.puntos += 1
             una_comida.hacer_sonido()
+
+        lista_de_enemigos = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
+        for un_enemigo in lista_de_enemigos:
+            un_enemigo.kill()
+            self.vidas -=1
 
 
 
