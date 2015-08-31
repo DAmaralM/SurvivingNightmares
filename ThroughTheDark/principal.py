@@ -25,12 +25,13 @@ def main():
     jugador_principal = Jugador(1)
 
     letraParaPuntos = pygame.font.Font(None,64)
-    
+    letraParaVidas = pygame.font.Font(None,64)
     
     # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Habitacion_1(jugador_principal))
     lista_niveles.append(Habitacion_2(jugador_principal))
+  
 
     # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
@@ -105,7 +106,8 @@ def main():
         
         textoPuntos = letraParaPuntos.render("Puntos: "+str(jugador_principal.puntos),1,constantes.BLANCO)
         pantalla.blit(textoPuntos,(10,10))
-        
+        textoVidas = letraParaVidas.render("Vidas: "+str(jugador_principal.vidas),1,constantes.BLANCO)
+        pantalla.blit(textoVidas,(700,10))        
         
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
 

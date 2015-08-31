@@ -10,7 +10,7 @@ class Level():
     lista_plataformas = None
     lista_enemigos = None
     lista_puntos = None 
-    lista_vidas = None    
+   
     
     
     # Imagen de fondo
@@ -29,17 +29,13 @@ class Level():
         self.lista_plataformas = pygame.sprite.Group()
         self.lista_enemigos = pygame.sprite.Group()
         self.lista_puntos = pygame.sprite.Group()
-        self.lista_vidas = pygame.sprite.Group()
         self.jugador = jugador
-
 
     def update(self):
         """ Actualizar todo sobre el nivel """
         self.lista_plataformas.update()
         self.lista_enemigos.update()
         self.lista_puntos.update()
-        self.lista_vidas.update()
-
     
     
     def draw(self, pantalla):
@@ -53,6 +49,7 @@ class Level():
         self.lista_plataformas.draw(pantalla)
         self.lista_enemigos.draw(pantalla)
         self.lista_puntos.draw(pantalla)
+ 
 
     def avance_nivel(self, avance_x):
         """ Cuando el usuario se mueve de izquierda/derecha se debe mover el nivel """

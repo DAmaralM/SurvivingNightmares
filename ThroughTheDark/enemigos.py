@@ -88,8 +88,7 @@ class MovingPlatform(Enemigo):
         '''Modificar aca que hacer cuando chocamos con un enemigo'''
         hit = pygame.sprite.collide_rect(self, self.jugador)
         if hit:
-            #self.kill()
-            self.jugador.kill()
+            self.enemigo.kill()
         
 
             
