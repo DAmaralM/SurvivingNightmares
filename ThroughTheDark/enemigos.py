@@ -84,9 +84,12 @@ class MovingPlatform(Enemigo):
         if cur_pos < self.limite_izquierdo or cur_pos > self.limite_derecho:
             self.mover_x *= -1
         
+        
+        '''Modificar aca que hacer cuando chocamos con un enemigo'''
         hit = pygame.sprite.collide_rect(self, self.jugador)
         if hit:
-            self.kill()
+            #self.kill()
+            self.jugador.kill()
         
 
             
