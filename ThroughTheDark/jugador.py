@@ -22,7 +22,7 @@ class Jugador(pygame.sprite.Sprite):
 
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
-    vidas = 3
+    vidas = 1
     jugador = 1
     puntos = 0
     # -- Metodos

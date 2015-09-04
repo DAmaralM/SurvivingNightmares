@@ -26,6 +26,7 @@ def main():
 
     letraParaPuntos = pygame.font.Font(None,64)
     letraParaVidas = pygame.font.Font(None,64)
+    letraParaGameOver = pygame.font.Font(None,45)
     
     # Creamos todos los niveles del juego
     lista_niveles = []
@@ -115,9 +116,17 @@ def main():
 
         pygame.display.flip()
         
-            
-        
 
+        if jugador_principal.vidas == 0:
+            pantalla.fill(constantes.NEGRO)
+            texto_gameover1 = letraParaGameOver.render("GAME OVER", 1, constantes.AZUL)
+            texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.AZUL)
+            pantalla.blit(texto_gameover1, [300, 250])
+            pantalla.blit(texto_gameover2, [100, 310])
+            pygame.display.flip()
+            pygame.event.wait()
+            salir = True
+            
     pygame.quit()
 
 if __name__ == "__main__":
