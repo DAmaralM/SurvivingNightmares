@@ -109,7 +109,7 @@ class Habitacion_1(Level):
         bloque.rect.y = 280
         bloque.limite_izquierdo = 1350
         bloque.limite_derecho = 1600
-        bloque.mover_x = 1
+        bloque.mover_x = 2
         bloque.jugador = self.jugador
         bloque.nivel = self
         self.lista_plataformas.add(bloque)
@@ -120,7 +120,7 @@ class Habitacion_1(Level):
         ene.rect.y = 400
         ene.limite_izquierdo = -200
         ene.limite_derecho = 150
-        ene.mover_x = 1
+        ene.mover_x = 2
         ene.jugador = self.jugador
         ene.nivel = self
-        self.lista_plataformas.add(ene)
+        self.lista_enemigos.add(ene)

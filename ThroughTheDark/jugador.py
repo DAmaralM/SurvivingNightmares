@@ -157,28 +157,25 @@ class Jugador(pygame.sprite.Sprite):
         # Verficiamos si colisionamos con algo mientras avanzamos
         lista_de_bloques_colisionados = pygame.sprite.spritecollide(self, self.nivel.lista_plataformas, False)
         for block in lista_de_bloques_colisionados:
-            if self.mover_x > 0:
-                self.rect.right = block.rect.left
-            elif self.mover_x < 0:
-                self.rect.left = block.rect.right
-            if (self.mover_y > 0):
-                self.rect.bottom = block.rect.top
-            elif(self.mover_y < 0):
-                self.rect.top = block.rect.bottom
+             if self.mover_x > 0:
+                 self.rect.right = block.rect.left
+             elif self.mover_x < 0:
+                 self.rect.left = block.rect.right
+             elif (self.mover_y > 0):
+                 self.rect.bottom = block.rect.top
+             elif(self.mover_y < 0):
+                 self.rect.top = block.rect.bottom
 
         lista_puntos_a_obtener = pygame.sprite.spritecollide(self, self.nivel.lista_puntos, False)
         for una_comida in lista_puntos_a_obtener:
             una_comida.kill()
             self.puntos += 1
             una_comida.hacer_sonido()
-
-        lista_de_enemigos = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
-        for un_enemigo in lista_de_enemigos:
+         
+        lista_enemigos_a_obtener = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
+        for un_enemigo in lista_enemigos_a_obtener:
             un_enemigo.kill()
-            self.vidas -=1
-
-
-
+            self.vidas -= 1
 
     def izquierda(self):
         """ Se llama cuando movemos hacia la izq. """

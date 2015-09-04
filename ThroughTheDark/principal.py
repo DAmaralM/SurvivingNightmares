@@ -59,21 +59,21 @@ def main():
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_LEFT:
                     jugador_principal.izquierda()
-                if evento.key == pygame.K_RIGHT:
+                elif evento.key == pygame.K_RIGHT:
                     jugador_principal.derecha()
-                if evento.key == pygame.K_UP:
+                elif evento.key == pygame.K_UP:
                     jugador_principal.arriba()
-                if evento.key == pygame.K_DOWN:
+                elif evento.key == pygame.K_DOWN:
                     jugador_principal.abajo()
 
-            if evento.type == pygame.KEYUP:
+            elif evento.type == pygame.KEYUP:
                 if evento.key == pygame.K_LEFT and jugador_principal.mover_x < 0:
                     jugador_principal.parar()
-                if evento.key == pygame.K_RIGHT and jugador_principal.mover_x > 0:
+                elif evento.key == pygame.K_RIGHT and jugador_principal.mover_x > 0:
                     jugador_principal.parar()
-                if evento.key == pygame.K_UP and jugador_principal.mover_y < 0:
+                elif evento.key == pygame.K_UP and jugador_principal.mover_y < 0:
                     jugador_principal.parar()
-                if evento.key == pygame.K_DOWN and jugador_principal.mover_y > 0:
+                elif evento.key == pygame.K_DOWN and jugador_principal.mover_y > 0:
                     jugador_principal.parar()
                     
     
@@ -119,7 +119,7 @@ def main():
 
         if jugador_principal.vidas == 0:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover1 = letraParaGameOver.render("GAME OVER", 1, constantes.AZUL)
+            texto_gameover1 = letraParaGameOver.render("PERDISTE GATOH", 1, constantes.AZUL)
             texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.AZUL)
             pantalla.blit(texto_gameover1, [300, 250])
             pantalla.blit(texto_gameover2, [100, 310])

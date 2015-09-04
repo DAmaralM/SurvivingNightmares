@@ -23,25 +23,14 @@ class Level_01(Level):
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
         self.fondo = imagen_1
-       
-       # imagen_2 = sprite_sheet_pantalla.obtener_imagen(896,894, 896,894)
-        #self.fondo = imagen_2
-
-        #imagen_3 = sprite_sheet_pantalla.obtener_imagen(896,894, 896,894)
-        #self.fondo = imagen_3
-
-        #imagen_4 = sprite_sheet_pantalla.obtener_imagen(896,894, 896,894)
-        #self.fondo = imagen_4
-        
-        #imagen_5 = sprite_sheet_pantalla.obtener_imagen(896,894, 896,894)
-        #self.fondo = imagen_5
-
-        #imagen_6 = sprite_sheet_pantalla.obtener_imagen(896,894, 896,894)
-        #self.fondo = imagen_6
-
         
         self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -2500
+        self.limite_derecho = 740
+        self.limite_izquierdo = 88
+        self.limite_superior = -20
+        self.limite_inferior = 675
+        self.cambio_nivel_x = 396
+        self.cambio_nivel_y = -16
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ #[platforma.GRASS_LEFT, , 500],
