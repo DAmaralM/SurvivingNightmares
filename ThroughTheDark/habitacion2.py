@@ -5,7 +5,7 @@ import enemigos
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
 from puntos import Estrellas, ESTRELLA
-
+from puerta import PUERTA, Puerta
 
 
 class Habitacion_2(Level):
@@ -265,3 +265,9 @@ class Habitacion_2(Level):
         bloque.jugador = self.jugador
         bloque.nivel = self
         self.lista_plataformas.add(bloque)
+        
+                #puerta
+        puerta = Puerta(PUERTA)
+        puerta.rect.x = 200
+        puerta.rect.y = 392
+        self.puerta.add(puerta)

@@ -5,6 +5,7 @@ from nivel import Level
 from funciones_spritesheet import SpriteSheet
 import enemigos
 from puntos import Estrellas, ESTRELLA
+from puerta import PUERTA, Puerta
 
 class Habitacion_1(Level):
     ''' Clase que define el primer nivel.
@@ -40,8 +41,6 @@ class Habitacion_1(Level):
                   [platforma.STONE, 600, 300],
                   [platforma.STONE, 600, 600],
                  ]
-
-
 
        
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -124,3 +123,9 @@ class Habitacion_1(Level):
         ene.jugador = self.jugador
         ene.nivel = self
         self.lista_enemigos.add(ene)
+        
+                #puerta
+        puerta = Puerta(PUERTA)
+        puerta.rect.x = 412
+        puerta.rect.y = -19
+        self.puerta.add(puerta)

@@ -17,12 +17,14 @@ class Jugador(pygame.sprite.Sprite):
     jugador_frame_up = []
     jugador_frame_down = []
 
+    llave = False
+
     # Direccion en la que va el jugador.
     direccion = "R"
 
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
-    vidas = 1
+    vidas = 5
     jugador = 1
     puntos = 0
     # -- Metodos
@@ -176,6 +178,10 @@ class Jugador(pygame.sprite.Sprite):
         for un_enemigo in lista_enemigos_a_obtener:
             un_enemigo.kill()
             self.vidas -= 1
+        
+        puerta_para_cambiar_nivel = pygame.sprite.spritecollide(self, self.nivel.puerta, False)
+        for a_puerta in puerta_para_cambiar_nivel:
+            self.llave = True
 
     def izquierda(self):
         """ Se llama cuando movemos hacia la izq. """

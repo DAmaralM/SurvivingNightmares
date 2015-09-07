@@ -3,6 +3,8 @@ import pygame
 import constantes
 from habitacion1 import Habitacion_1
 from habitacion2 import Habitacion_2
+from habitacion3 import Habitacion_3
+from habitacion4 import Habitacion_4
 
 from jugador import Jugador
 import enemigos
@@ -32,6 +34,8 @@ def main():
     lista_niveles = []
     lista_niveles.append(Habitacion_1(jugador_principal))
     lista_niveles.append(Habitacion_2(jugador_principal))
+    lista_niveles.append(Habitacion_3(jugador_principal))
+    lista_niveles.append(Habitacion_4(jugador_principal))
   
 
     # Seteamos cual es el primer nivel.
@@ -88,15 +92,14 @@ def main():
         # Actualiza los elementos del nivel
         nivel_actual.update()
 
-        #Si el jugador se mueve hacia el fin del nivel cambia el jugador al siguiente nivel.
-        if ((jugador_principal.rect.x >= nivel_actual.cambio_nivel_x-2 or jugador_principal.rect.x >= nivel_actual.cambio_nivel_x-2)  and jugador_principal.rect.y == nivel_actual.cambio_nivel_y):
-            jugador_principal.rect.x = 120
-            if numero_del_nivel_actual < len(lista_niveles)-1:
+        if (jugador_principal.llave):
+            if (numero_del_nivel_actual < len(lista_niveles)-1):
                 numero_del_nivel_actual += 1
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
                 jugador_principal.nivel = nivel_actual
                 jugador_principal.rect.x = 400
                 jugador_principal.rect.y = 600
+                jugador_principal.llave= False
 
 
         print "Posicion x", jugador_principal.rect.x, "Posicion y", jugador_principal.rect.y

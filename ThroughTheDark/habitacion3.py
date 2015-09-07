@@ -3,9 +3,10 @@ import constantes
 import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
+import enemigos
+from puerta import PUERTA, Puerta
 
-
-class Level_01(Level):
+class Habitacion_3(Level):
     ''' Clase que define el primer nivel.
         Se debe definir el fondo, las plataformas y los enemigos que aparezcan. '''
     
@@ -21,7 +22,7 @@ class Level_01(Level):
         sprite_sheet_pantalla = SpriteSheet("imagenes/fondoooo.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
-        imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
+        imagen_1 = sprite_sheet_pantalla.obtener_imagen(896,896, 896,894)
         self.fondo = imagen_1
         
         self.fondo.set_colorkey(constantes.BLANCO)
@@ -46,12 +47,31 @@ class Level_01(Level):
             self.lista_plataformas.add(bloque)
 
         # Se agrega una plataforma en movimiento.
-        bloque = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        bloque.rect.x = 1350
-        bloque.rect.y = 280
-        bloque.limite_izquierdo = 1350
-        bloque.limite_derecho = 1600
-        bloque.mover_x = 1
-        bloque.jugador = self.jugador
-        bloque.nivel = self
-        self.lista_plataformas.add(bloque)
+        
+                #enemigos
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 200
+        ene.rect.y = 200
+        ene.limite_izquierdo = -200
+        ene.limite_derecho = 150
+        ene.mover_x = 2
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_enemigos.add(ene)
+        
+        #enemigos
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 200
+        ene.rect.y = 600
+        ene.limite_izquierdo = -200
+        ene.limite_derecho = 150
+        ene.mover_x = 2
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_enemigos.add(ene)
+        
+                        #puerta
+        puerta = Puerta(PUERTA)
+        puerta.rect.x = 404
+        puerta.rect.y = -16
+        self.puerta.add(puerta)

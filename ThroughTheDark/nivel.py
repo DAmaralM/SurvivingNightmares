@@ -10,7 +10,7 @@ class Level():
     lista_plataformas = None
     lista_enemigos = None
     lista_puntos = None 
-   
+    puerta = None 
     
     
     # Imagen de fondo
@@ -30,12 +30,14 @@ class Level():
         self.lista_enemigos = pygame.sprite.Group()
         self.lista_puntos = pygame.sprite.Group()
         self.jugador = jugador
+        self.puerta = pygame.sprite.Group()
 
     def update(self):
         """ Actualizar todo sobre el nivel """
         self.lista_plataformas.update()
         self.lista_enemigos.update()
         self.lista_puntos.update()
+        self.puerta.update() 
     
     
     def draw(self, pantalla):
@@ -49,6 +51,7 @@ class Level():
         self.lista_plataformas.draw(pantalla)
         self.lista_enemigos.draw(pantalla)
         self.lista_puntos.draw(pantalla)
+        self.puerta.draw(pantalla)
  
 
     def avance_nivel(self, avance_x):
