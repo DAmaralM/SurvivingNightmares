@@ -40,7 +40,6 @@ class Habitacion_2(Level):
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
         nivel = [ [platforma.STONE, 200 ,500],
-                  
                   [platforma.STONE, 250, 450 ],
                   [platforma.STONE, 300, 400 ],
                   [platforma.STONE, 350, 350 ],
@@ -50,9 +49,8 @@ class Habitacion_2(Level):
                   [platforma.STONE, 550, 400 ],
                   [platforma.STONE, 600, 450 ],
                   [platforma.STONE, 650, 500 ],
-                  
-                  
-                  ]                  
+                  [platforma.STONE, 150, 550 ],
+                  [platforma.STONE, 100, 600 ]]                  
 
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -268,6 +266,6 @@ class Habitacion_2(Level):
         
                 #puerta
         puerta = Puerta(PUERTA)
-        puerta.rect.x = 200
-        puerta.rect.y = 392
+        puerta.rect.x = 92
+        puerta.rect.y = 436
         self.puerta.add(puerta)

@@ -4,8 +4,9 @@ import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
 import enemigos
-from puntos import Estrellas, ESTRELLA
+from puntos import Estrellas, ESTRELLA 
 from puerta import PUERTA, Puerta
+
 
 class Habitacion_1(Level):
     ''' Clase que define el primer nivel.
@@ -50,7 +51,8 @@ class Habitacion_1(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
-
+        
+            
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 700
         puntos.rect.y = 200

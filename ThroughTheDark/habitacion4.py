@@ -3,7 +3,7 @@ import constantes
 import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
-
+from puerta import PUERTA, Puerta
 
 class Habitacion_4(Level):
     ''' Clase que define el primer nivel.
@@ -39,3 +39,9 @@ class Habitacion_4(Level):
         nivel = [ #[platforma.GRASS_LEFT, , 500],
                  ]
 
+                #puerta
+        puerta = Puerta(PUERTA)
+        puerta.rect.x = 412
+        puerta.rect.y = 500
+        
+        self.puerta.add(puerta)

@@ -34,7 +34,7 @@ class Habitacion_3(Level):
         self.cambio_nivel_y = -16
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ #[platforma.GRASS_LEFT, , 500],
+        nivel = [[platforma.STONE,100 , 500],
                  ]
 
 

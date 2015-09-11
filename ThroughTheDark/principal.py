@@ -5,6 +5,8 @@ from habitacion1 import Habitacion_1
 from habitacion2 import Habitacion_2
 from habitacion3 import Habitacion_3
 from habitacion4 import Habitacion_4
+from habitacion5 import Habitacion_5
+
 
 from jugador import Jugador
 import enemigos
@@ -36,7 +38,7 @@ def main():
     lista_niveles.append(Habitacion_2(jugador_principal))
     lista_niveles.append(Habitacion_3(jugador_principal))
     lista_niveles.append(Habitacion_4(jugador_principal))
-  
+    lista_niveles.append(Habitacion_5(jugador_principal)) 
 
     # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
@@ -69,6 +71,8 @@ def main():
                     jugador_principal.arriba()
                 elif evento.key == pygame.K_DOWN:
                     jugador_principal.abajo()
+                elif evento.key == pygame.K_ESCAPE:
+                    salir = True
 
             elif evento.type == pygame.KEYUP:
                 if evento.key == pygame.K_LEFT and jugador_principal.mover_x < 0:
