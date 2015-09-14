@@ -11,13 +11,17 @@ from habitacion3 import Habitacion_3
 from habitacion4 import Habitacion_4
 from habitacion5 import Habitacion_5
 
-
 from jugador import Jugador
+from time import time
 import enemigos
 
 
 
 def jugar(pygame, constantes, pantalla):
+    
+    
+    tiempo_comienzo = time() + 5
+    
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(1)
     letraParaPuntos = pygame.font.Font(None, 64)
@@ -83,20 +87,40 @@ def jugar(pygame, constantes, pantalla):
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
+        
         textoPuntos = letraParaPuntos.render("Puntos: " + str(jugador_principal.puntos), 1, constantes.BLANCO)
         pantalla.blit(textoPuntos, (10, 10))
+        
         textoVidas = letraParaVidas.render("Vidas: " + str(jugador_principal.vidas), 1, constantes.BLANCO)
         pantalla.blit(textoVidas, (700, 10))
+        
+        tiempo_transcurrido = int(tiempo_comienzo - time())
+        textoTiempo = letraParaPuntos.render("Tiempo: " + str(tiempo_transcurrido), 1, constantes.BLANCO)
+        pantalla.blit(textoTiempo, (300, 10))
+        
+        
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
         if jugador_principal.vidas == 0:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover1 = letraParaGameOver.render("PERDISTE GATOH", 1, constantes.AZUL)
+            texto_gameover1 = letraParaGameOver.render("PERDISTE GATOH", 1, constantes.ROJO)
             texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.AZUL)
             pantalla.blit(texto_gameover1, [300, 250])
             pantalla.blit(texto_gameover2, [100, 310])
             pygame.display.flip()
             pygame.event.wait()
             salir = True
+        
+        if tiempo_transcurrido == 0:
+            pantalla.fill(constantes.NEGRO)
+            texto_gameover1 = letraParaGameOver.render("TE QUEDASTE SIN TIEMPO, PELOTUDO", 1, constantes.ROJO)
+            texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.ROJO)
+            pantalla.blit(texto_gameover1, [150, 250])
+            pantalla.blit(texto_gameover2, [125, 310])
+            pygame.display.flip()
+            pygame.event.wait()
+            salir = True
+        
+        
         clock.tick(60)
         pygame.display.flip()
         
@@ -115,7 +139,7 @@ def main():
     sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
     sonido.play()
     
-    menu_principal = cMenu(50,50,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
+    menu_principal = cMenu(400,300,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
 
     estado = 0 
     estado_previo = 1
