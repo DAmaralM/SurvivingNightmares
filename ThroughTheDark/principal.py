@@ -20,7 +20,7 @@ import enemigos
 def jugar(pygame, constantes, pantalla):
     
     
-    tiempo_comienzo = time() + 5
+    tiempo_comienzo = time() + 100
     
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(1)
@@ -141,6 +141,8 @@ def main():
     
     menu_principal = cMenu(400,300,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
 
+    menu_principal.set_center(True,True)
+    menu_principal.set_alignment("center", "center")
     estado = 0 
     estado_previo = 1
     opcion = []

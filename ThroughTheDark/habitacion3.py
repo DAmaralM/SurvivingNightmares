@@ -72,6 +72,6 @@ class Habitacion_3(Level):
         
                         #puerta
         puerta = Puerta(PUERTA)
-        puerta.rect.x = 404
-        puerta.rect.y = -16
+        puerta.rect.x = 410
+        puerta.rect.y = -20
         self.puerta.add(puerta)
