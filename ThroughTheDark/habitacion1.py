@@ -21,7 +21,7 @@ class Habitacion_1(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo-redecorar.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
@@ -30,8 +30,8 @@ class Habitacion_1(Level):
         self.fondo.set_colorkey(constantes.BLANCO)
         self.limite_derecho = 740
         self.limite_izquierdo = 88
-        self.limite_superior = -20
-        self.limite_inferior = 675
+        self.limite_superior = -10
+        self.limite_inferior = 686
         self.cambio_nivel_x = 396
         self.cambio_nivel_y = -16
 
@@ -128,6 +128,6 @@ class Habitacion_1(Level):
         
                 #puerta
         puerta = Puerta(PUERTA)
-        puerta.rect.x = 412
-        puerta.rect.y = -19
+        puerta.rect.x = 450
+        puerta.rect.y = 45
         self.puerta.add(puerta)

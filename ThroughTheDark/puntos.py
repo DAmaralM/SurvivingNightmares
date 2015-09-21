@@ -9,7 +9,7 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-ESTRELLA          = (0, 0, 17, 16)
+ESTRELLA          = (0, 0, 34, 32)
 
 #Hoy hicimos los sonidos y los puntos
 

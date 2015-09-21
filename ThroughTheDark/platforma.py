@@ -9,7 +9,7 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-STONE            = (0, 0, 60, 57)
+STONE            = (0, 0, 60, 60)
 
 
 class Plataforma(pygame.sprite.Sprite):

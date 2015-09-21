@@ -19,7 +19,7 @@ class Habitacion_3(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo-redecorar.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_1 = sprite_sheet_pantalla.obtener_imagen(896,896, 896,894)
@@ -28,15 +28,35 @@ class Habitacion_3(Level):
         self.fondo.set_colorkey(constantes.BLANCO)
         self.limite_derecho = 740
         self.limite_izquierdo = 88
-        self.limite_superior = -20
-        self.limite_inferior = 675
+        self.limite_superior = -10
+        self.limite_inferior = 690
         self.cambio_nivel_x = 396
         self.cambio_nivel_y = -16
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [[platforma.STONE,100 , 500],
+        nivel = [
+                 [platforma.STONE,735 , 325],
+                 [platforma.STONE,675 , 325],
+                 [platforma.STONE,615 , 325],
+                 [platforma.STONE,555 , 325],
+                 [platforma.STONE,495 , 325],
+                 [platforma.STONE,495 , 385],
+                 [platforma.STONE,495 , 445],
+                 [platforma.STONE,495 , 505],
+                 [platforma.STONE,495 , 565],
+                 [platforma.STONE,495 , 625],
+                 
+                 [platforma.STONE,90  , 325],
+                 [platforma.STONE,150 , 325],
+                 [platforma.STONE,210 , 325],
+                 [platforma.STONE,270 , 325],
+                 [platforma.STONE,330 , 325],
+                 [platforma.STONE,330 , 385],
+                 [platforma.STONE,330 , 445],
+                 [platforma.STONE,330 , 505],
+                 [platforma.STONE,330 , 565],
+                 [platforma.STONE,330 , 625],
                  ]
-
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
