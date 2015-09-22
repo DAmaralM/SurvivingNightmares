@@ -3,7 +3,7 @@ import pygame
 import constantes
 
 from menu import cMenu, EVENT_CHANGE_STATE 
-
+from pygame.locals import *
 
 from habitacion1 import Habitacion_1
 from habitacion2 import Habitacion_2
@@ -29,8 +29,8 @@ def jugar(pygame, constantes, pantalla):
     letraParaGameOver = pygame.font.Font(None, 45)
 # Creamos todos los niveles del juego
     lista_niveles = []
-    lista_niveles.append(Habitacion_1(jugador_principal))
-    lista_niveles.append(Habitacion_2(jugador_principal))
+    #lista_niveles.append(Habitacion_1(jugador_principal))
+    #lista_niveles.append(Habitacion_2(jugador_principal))
     lista_niveles.append(Habitacion_3(jugador_principal))
     lista_niveles.append(Habitacion_4(jugador_principal))
     lista_niveles.append(Habitacion_5(jugador_principal))
@@ -70,6 +70,10 @@ def jugar(pygame, constantes, pantalla):
                     jugador_principal.parar()
                 elif evento.key == pygame.K_DOWN and jugador_principal.mover_y > 0:
                     jugador_principal.parar()
+            #elif evento.type==VIDEORESIZE:
+                #pantalla = pygame.display.set_mode(evento.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
+                #pantalla.blit(pygame.transform.scale(image,evento.dict['size']),(0,0))
+                #pygame.display.flip()
         
         # Actualiza todo el jugador
         lista_sprites_activos.update()
@@ -140,11 +144,15 @@ def main():
     sonido.play()
     
     menu_principal = cMenu(400,300,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
-
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("La Yessi",5,None),("Astro",6,None),("Volver",7,None)])
+    
     menu_principal.set_center(True,True)
     menu_principal.set_alignment("center", "center")
+    menuJugador.set_center(True,True)
+    menuJugador.set_alignment("center", "center")
     estado = 0 
     estado_previo = 1
+    jugador = 1
     opcion = []
     salir = False
     
@@ -160,15 +168,28 @@ def main():
             if estado == 0:
                 opcion, estado = menu_principal.update(e, estado)
             #Opcion jugar
-            if estado == 1:
-                salir = jugar(pygame, constantes, pantalla)
-            if estado == 2:
+            elif estado == 1:
+                pantalla.fill(constantes.NEGRO)
+                opcion, estado = menuJugador.update(e, estado)
+                pygame.display.flip()
+                #salir = jugar(pygame, constantes, pantalla)
+            elif estado == 2:
                 pantalla.fill(constantes.NEGRO)
                 letraParaMarcador = pygame.font.Font(None, 36)
                 text = letraParaMarcador.render("Creditos",1,constantes.BLANCO)
                 pantalla.blit(text, (100,0))              
-            if estado == 3:
+            elif estado == 3:
                 salir = True
+            elif estado == 5:
+                Jugador.jugador = 1
+                jugar(pygame, constantes, pantalla)
+            elif estado == 6:
+                Jugador.jugador = 2
+                jugar(pygame, constantes, pantalla)
+            elif estado == 7:
+                pantalla.fill(constantes.NEGRO)
+                estado = 0
+                pygame.display.flip()
             
         if e.type == pygame.QUIT:
             salir = True 

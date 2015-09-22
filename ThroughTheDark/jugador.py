@@ -25,7 +25,6 @@ class Jugador(pygame.sprite.Sprite):
     # Lista de sprite con las cosas que nos podemos chocar.
     nivel = None
     vidas = 5
-    jugador = 1
     puntos = 0
     # -- Metodos
     def __init__(self, jugador):

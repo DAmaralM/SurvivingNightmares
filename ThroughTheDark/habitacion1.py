@@ -104,17 +104,6 @@ class Habitacion_1(Level):
         self.lista_puntos.add(puntos)
         
         
-        # Se agrega una plataforma en movimiento.
-        bloque = platforma.PlataformaConMovimiento(platforma.STONE)
-        bloque.rect.x = 1350
-        bloque.rect.y = 280
-        bloque.limite_izquierdo = 1350
-        bloque.limite_derecho = 1600
-        bloque.mover_x = 2
-        bloque.jugador = self.jugador
-        bloque.nivel = self
-        self.lista_plataformas.add(bloque)
-        
         #enemigos
         ene = enemigos.MovingPlatform()
         ene.rect.x = 410

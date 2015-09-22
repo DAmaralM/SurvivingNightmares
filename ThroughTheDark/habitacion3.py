@@ -56,6 +56,9 @@ class Habitacion_3(Level):
                  [platforma.STONE,330 , 505],
                  [platforma.STONE,330 , 565],
                  [platforma.STONE,330 , 625],
+                 
+                 [platforma.STONE,200 , 174],
+                 [platforma.STONE,650 , 174],
                  ]
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -71,7 +74,7 @@ class Habitacion_3(Level):
                 #enemigos
         ene = enemigos.MovingPlatform()
         ene.rect.x = 200
-        ene.rect.y = 200
+        ene.rect.y = 230
         ene.limite_izquierdo = -200
         ene.limite_derecho = 150
         ene.mover_x = 2
@@ -93,5 +96,5 @@ class Habitacion_3(Level):
                         #puerta
         puerta = Puerta(PUERTA)
         puerta.rect.x = 410
-        puerta.rect.y = -20
+        puerta.rect.y = 20
         self.puerta.add(puerta)
