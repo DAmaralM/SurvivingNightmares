@@ -3,6 +3,7 @@ import constantes
 import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
+from puntos import Estrellas, ESTRELLA
 import enemigos
 from puerta import PUERTA, Puerta
 
@@ -56,9 +57,7 @@ class Habitacion_3(Level):
                  [platforma.STONE,330 , 505],
                  [platforma.STONE,330 , 565],
                  [platforma.STONE,330 , 625],
-                 
-                 [platforma.STONE,200 , 174],
-                 [platforma.STONE,650 , 174],
+
                  ]
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
@@ -68,7 +67,142 @@ class Habitacion_3(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
+            
+            
+        #Puntos
+        
+        #Izquierda
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 100
+        puntos.rect.y = 400
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
 
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 280
+        puntos.rect.y = 400
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 195
+        puntos.rect.y = 400
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 100
+        puntos.rect.y = 500
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 280
+        puntos.rect.y = 500
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 100
+        puntos.rect.y = 600
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 280
+        puntos.rect.y = 600
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        #Derecha
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 720
+        puntos.rect.y = 420
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 580
+        puntos.rect.y = 420
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 580
+        puntos.rect.y = 520
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 580
+        puntos.rect.y = 620
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        #Pasillo
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 740
+        puntos.rect.y = 745
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 110
+        puntos.rect.y = 745
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        #Arriba
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 110
+        puntos.rect.y = 120
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 110
+        puntos.rect.y = 270
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 740
+        puntos.rect.y = 120
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 740
+        puntos.rect.y = 270
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         # Se agrega una plataforma en movimiento.
         
                 #enemigos
@@ -85,7 +219,7 @@ class Habitacion_3(Level):
         #enemigos
         ene = enemigos.MovingPlatform()
         ene.rect.x = 200
-        ene.rect.y = 600
+        ene.rect.y = 700
         ene.limite_izquierdo = -200
         ene.limite_derecho = 150
         ene.mover_x = 2

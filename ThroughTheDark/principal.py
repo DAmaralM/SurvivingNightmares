@@ -17,13 +17,13 @@ import enemigos
 
 
 
-def jugar(pygame, constantes, pantalla):
+def jugar(pygame, constantes, pantalla,jugador):
     
     
     tiempo_comienzo = time() + 100
     
     # Creamos al jugador con la imagen p1_walk.png
-    jugador_principal = Jugador(1)
+    jugador_principal = Jugador(jugador)
     letraParaPuntos = pygame.font.Font(None, 64)
     letraParaVidas = pygame.font.Font(None, 64)
     letraParaGameOver = pygame.font.Font(None, 45)
@@ -51,14 +51,14 @@ def jugar(pygame, constantes, pantalla):
             if evento.type == pygame.QUIT:
                 salir = True
             if evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_LEFT:
+                if evento.key == pygame.K_UP:
+                    jugador_principal.arriba()
+                elif (evento.key == pygame.K_DOWN):
+                    jugador_principal.abajo()
+                elif evento.key == pygame.K_LEFT:
                     jugador_principal.izquierda()
                 elif evento.key == pygame.K_RIGHT:
                     jugador_principal.derecha()
-                elif evento.key == pygame.K_UP:
-                    jugador_principal.arriba()
-                elif evento.key == pygame.K_DOWN:
-                    jugador_principal.abajo()
                 elif evento.key == pygame.K_ESCAPE:
                     salir = True
             elif evento.type == pygame.KEYUP:
@@ -71,8 +71,10 @@ def jugar(pygame, constantes, pantalla):
                 elif evento.key == pygame.K_DOWN and jugador_principal.mover_y > 0:
                     jugador_principal.parar()
             #elif evento.type==VIDEORESIZE:
-                #pantalla = pygame.display.set_mode(evento.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
-                #pantalla.blit(pygame.transform.scale(image,evento.dict['size']),(0,0))
+                #pantalla=pygame.display.set_mode(evento.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
+                #fondo_escala = pygame.transform.scale(nivel_actual.fondo,evento.dict['size'])
+                #nivel_actual.fondo = fondo_escala
+                #pantalla.blit(fondo_escala,(0,0))
                 #pygame.display.flip()
         
         # Actualiza todo el jugador
@@ -116,7 +118,7 @@ def jugar(pygame, constantes, pantalla):
         
         if tiempo_transcurrido == 0:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover1 = letraParaGameOver.render("TE QUEDASTE SIN TIEMPO, PELOTUDO", 1, constantes.ROJO)
+            texto_gameover1 = letraParaGameOver.render("TE QUEDASTE SIN TIEMPO", 1, constantes.ROJO)
             texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.ROJO)
             pantalla.blit(texto_gameover1, [150, 250])
             pantalla.blit(texto_gameover2, [125, 310])
@@ -137,14 +139,15 @@ def main():
 
     # Configuramos el alto y largo de la pantalla
     tamanio = [constantes.ANCHO_PANTALLA, constantes.LARGO_PANTALLA]
-    pantalla = pygame.display.set_mode(tamanio)
+    pantalla = pygame.display.set_mode(tamanio,HWSURFACE|DOUBLEBUF|RESIZABLE)
 
-    pygame.display.set_caption("Lost stars")
+
+    pygame.display.set_caption("Surviving Nightmares")
     sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
     sonido.play()
     
     menu_principal = cMenu(400,300,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
-    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("La Yessi",5,None),("Astro",6,None),("Volver",7,None)])
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun",5,None),("Astro",6,None),("Volver",7,None)])
     
     menu_principal.set_center(True,True)
     menu_principal.set_alignment("center", "center")
@@ -181,11 +184,9 @@ def main():
             elif estado == 3:
                 salir = True
             elif estado == 5:
-                Jugador.jugador = 1
-                jugar(pygame, constantes, pantalla)
+                jugar(pygame, constantes, pantalla,1)
             elif estado == 6:
-                Jugador.jugador = 2
-                jugar(pygame, constantes, pantalla)
+                jugar(pygame, constantes, pantalla,2)
             elif estado == 7:
                 pantalla.fill(constantes.NEGRO)
                 estado = 0
