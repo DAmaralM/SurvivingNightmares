@@ -27,10 +27,12 @@ def jugar(pygame, constantes, pantalla,jugador):
     letraParaPuntos = pygame.font.Font(None, 64)
     letraParaVidas = pygame.font.Font(None, 64)
     letraParaGameOver = pygame.font.Font(None, 45)
+    relojmarcador = pygame.image.load("imagenes/relojmarcador.png")
+    puntosmarcador = pygame.image.load("imagenes/puntos.png")
 # Creamos todos los niveles del juego
     lista_niveles = []
-    #lista_niveles.append(Habitacion_1(jugador_principal))
-    #lista_niveles.append(Habitacion_2(jugador_principal))
+    lista_niveles.append(Habitacion_1(jugador_principal))
+    lista_niveles.append(Habitacion_2(jugador_principal))
     lista_niveles.append(Habitacion_3(jugador_principal))
     lista_niveles.append(Habitacion_4(jugador_principal))
     lista_niveles.append(Habitacion_5(jugador_principal))
@@ -94,15 +96,19 @@ def jugar(pygame, constantes, pantalla,jugador):
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
         
-        textoPuntos = letraParaPuntos.render("Puntos: " + str(jugador_principal.puntos), 1, constantes.BLANCO)
-        pantalla.blit(textoPuntos, (10, 10))
+        textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.AZUL)
+        pantalla.blit(puntosmarcador, (30, 10))
+        pantalla.blit(textoPuntos, (75, 10))
         
-        textoVidas = letraParaVidas.render("Vidas: " + str(jugador_principal.vidas), 1, constantes.BLANCO)
+        textoVidas = letraParaVidas.render("Vidas:" + str(jugador_principal.vidas), 1, constantes.AZUL)
         pantalla.blit(textoVidas, (700, 10))
         
+        
         tiempo_transcurrido = int(tiempo_comienzo - time())
-        textoTiempo = letraParaPuntos.render("Tiempo: " + str(tiempo_transcurrido), 1, constantes.BLANCO)
-        pantalla.blit(textoTiempo, (300, 10))
+        textotiempo =letraParaPuntos.render("" + str(tiempo_transcurrido), 1, constantes.AZUL)
+        pantalla.blit(relojmarcador, (135, 10))
+        pantalla.blit(textotiempo, (175, 10))
+
         
         
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
