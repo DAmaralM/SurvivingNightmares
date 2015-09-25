@@ -1,6 +1,7 @@
 import pygame
 import constantes
 import platforma
+import artefactos
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
 import enemigos
@@ -41,6 +42,8 @@ class Habitacion_1(Level):
                   [platforma.STONE, 300, 600],
                   [platforma.STONE, 600, 300],
                   [platforma.STONE, 600, 600],
+                  
+                  #[artefactos.POZO, 150, 200],
                  ]
 
        
