@@ -5,7 +5,7 @@ from nivel import Level
 from funciones_spritesheet import SpriteSheet
 
 
-class Level_01(Level):
+class Habitacion_6(Level):
     ''' Clase que define el primer nivel.
         Se debe definir el fondo, las plataformas y los enemigos que aparezcan. '''
     
@@ -18,10 +18,10 @@ class Level_01(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondoactualizado.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
-        imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
+        imagen_1 = sprite_sheet_pantalla.obtener_imagen(0,1788, 896,894)
         self.fondo = imagen_1
        
         self.fondo.set_colorkey(constantes.BLANCO)
@@ -48,13 +48,3 @@ class Level_01(Level):
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
 
-        # Se agrega una plataforma en movimiento.
-        bloque = platforma.PlataformaConMovimiento(platforma.STONE_PLATFORM_MIDDLE)
-        bloque.rect.x = 1350
-        bloque.rect.y = 280
-        bloque.limite_izquierdo = 1350
-        bloque.limite_derecho = 1600
-        bloque.mover_x = 1
-        bloque.jugador = self.jugador
-        bloque.nivel = self
-        self.lista_plataformas.add(bloque)

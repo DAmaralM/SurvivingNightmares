@@ -3,6 +3,7 @@ import constantes
 import platforma
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
+from puerta import PUERTA, Puerta
 
 
 class Habitacion_5(Level):
@@ -18,10 +19,10 @@ class Habitacion_5(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondoactualizado.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
-        imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
+        imagen_1 = sprite_sheet_pantalla.obtener_imagen(0,894, 896,894)
         self.fondo = imagen_1
        
       
@@ -45,4 +46,11 @@ class Habitacion_5(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
+            
+                #puerta
+        puerta = Puerta(PUERTA)
+        puerta.rect.x = 412
+        puerta.rect.y = 500
+        
+        self.puerta.add(puerta)
 

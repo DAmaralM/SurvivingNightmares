@@ -18,10 +18,10 @@ class Habitacion_4(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondoactualizado.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
-        imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,896, 896,894)
+        imagen_1 = sprite_sheet_pantalla.obtener_imagen(896,0, 896,894)
         self.fondo = imagen_1
         
         self.fondo.set_colorkey(constantes.BLANCO)

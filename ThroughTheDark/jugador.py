@@ -168,6 +168,18 @@ class Jugador(pygame.sprite.Sprite):
              elif(self.mover_y < 0):
                  self.rect.top = block.rect.bottom
 
+        lista_de_bloques_colisionados2 = pygame.sprite.spritecollide(self, self.nivel.lista_artefactos, False)
+        
+        for block in lista_de_bloques_colisionados2:
+             if self.mover_x > 0:
+                 self.rect.right = block.rect.left
+             elif self.mover_x < 0:
+                 self.rect.left = block.rect.right
+             elif (self.mover_y > 0):
+                 self.rect.bottom = block.rect.top
+             elif(self.mover_y < 0):
+                 self.rect.top = block.rect.bottom
+
         lista_puntos_a_obtener = pygame.sprite.spritecollide(self, self.nivel.lista_puntos, False)
         for una_comida in lista_puntos_a_obtener:
             una_comida.kill()

@@ -9,8 +9,8 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-ESCALERA            = (0, 0, 184, 117)
-POZO            = (192, 0, 322, 182)
+ESCALERA            = (0, 0, 140, 90)
+POZO            = (140, 0, 120, 140)
 
 
 class Artefactos(pygame.sprite.Sprite):
@@ -19,7 +19,7 @@ class Artefactos(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet_data):
         """ Plataforma constructor."""
         pygame.sprite.Sprite.__init__(self)
-        sprite_sheet = SpriteSheetNegro("imagenes/artefactos.png")
+        sprite_sheet = SpriteSheet("imagenes/artefactos.png")
         # Grab the image for this platform
         self.image = sprite_sheet.obtener_imagen(sprite_sheet_data[0],
                                             sprite_sheet_data[1],

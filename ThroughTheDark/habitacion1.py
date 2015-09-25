@@ -22,7 +22,7 @@ class Habitacion_1(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondoactualizado.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_1 = sprite_sheet_pantalla.obtener_imagen(1788,1788, 896,894)
@@ -41,9 +41,8 @@ class Habitacion_1(Level):
         nivel = [ [platforma.STONE, 300, 300],
                   [platforma.STONE, 300, 600],
                   [platforma.STONE, 600, 300],
-                  [platforma.STONE, 600, 600],
+                  [platforma.STONE, 600, 600]
                   
-                  #[artefactos.POZO, 150, 200],
                  ]
 
        
@@ -54,6 +53,24 @@ class Habitacion_1(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
+            
+            
+            
+            
+            
+            
+        nivel_artefacto = [ [artefactos.POZO, 150, 150]
+                 
+                 ]
+
+       
+
+        for artefactos1 in nivel_artefacto:
+            bloque_a = artefactos.Artefactos(artefactos1[0])
+            bloque_a.rect.x = artefactos1[1]
+            bloque_a.rect.y = artefactos1[2]
+            bloque_a.jugador = self.jugador
+            self.lista_artefactos.add(bloque_a)
         
             
         puntos = Estrellas(ESTRELLA)

@@ -8,6 +8,7 @@ class Level():
 
     # Lista de todos los sprites utilizados en todos los niveles.  
     lista_plataformas = None
+    lista_artefactos = None
     lista_enemigos = None
     lista_puntos = None 
     puerta = None 
@@ -29,6 +30,7 @@ class Level():
         self.lista_plataformas = pygame.sprite.Group()
         self.lista_enemigos = pygame.sprite.Group()
         self.lista_puntos = pygame.sprite.Group()
+        self.lista_artefactos = pygame.sprite.Group()
         self.jugador = jugador
         self.puerta = pygame.sprite.Group()
 
@@ -37,6 +39,7 @@ class Level():
         self.lista_plataformas.update()
         self.lista_enemigos.update()
         self.lista_puntos.update()
+        self.lista_artefactos.update()
         self.puerta.update() 
     
     
@@ -51,6 +54,7 @@ class Level():
         self.lista_plataformas.draw(pantalla)
         self.lista_enemigos.draw(pantalla)
         self.lista_puntos.draw(pantalla)
+        self.lista_artefactos.draw(pantalla)
         self.puerta.draw(pantalla)
  
 

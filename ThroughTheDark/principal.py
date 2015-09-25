@@ -10,6 +10,7 @@ from habitacion2 import Habitacion_2
 from habitacion3 import Habitacion_3
 from habitacion4 import Habitacion_4
 from habitacion5 import Habitacion_5
+from habitacion6 import Habitacion_6
 
 from jugador import Jugador
 from time import time
@@ -29,6 +30,7 @@ def jugar(pygame, constantes, pantalla,jugador):
     letraParaGameOver = pygame.font.Font(None, 45)
     relojmarcador = pygame.image.load("imagenes/relojmarcador.png")
     puntosmarcador = pygame.image.load("imagenes/puntos.png")
+    vidasmarcador = pygame.image.load("imagenes/vidas.png")
 # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Habitacion_1(jugador_principal))
@@ -36,6 +38,7 @@ def jugar(pygame, constantes, pantalla,jugador):
     lista_niveles.append(Habitacion_3(jugador_principal))
     lista_niveles.append(Habitacion_4(jugador_principal))
     lista_niveles.append(Habitacion_5(jugador_principal))
+    lista_niveles.append(Habitacion_6(jugador_principal))
 # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
     nivel_actual = lista_niveles[numero_del_nivel_actual]
@@ -96,18 +99,19 @@ def jugar(pygame, constantes, pantalla,jugador):
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
         
-        textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.AZUL)
-        pantalla.blit(puntosmarcador, (30, 10))
-        pantalla.blit(textoPuntos, (75, 10))
+        textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.NEGRO)
+        pantalla.blit(puntosmarcador, (100, 810))
+        pantalla.blit(textoPuntos, (150, 810))
         
-        textoVidas = letraParaVidas.render("Vidas:" + str(jugador_principal.vidas), 1, constantes.AZUL)
-        pantalla.blit(textoVidas, (700, 10))
+        textoVidas = letraParaVidas.render("" + str(jugador_principal.vidas), 1, constantes.ROJO)
+        pantalla.blit(vidasmarcador, (290, 810))
+        pantalla.blit(textoVidas, (340, 810))
         
         
         tiempo_transcurrido = int(tiempo_comienzo - time())
-        textotiempo =letraParaPuntos.render("" + str(tiempo_transcurrido), 1, constantes.AZUL)
-        pantalla.blit(relojmarcador, (135, 10))
-        pantalla.blit(textotiempo, (175, 10))
+        textotiempo =letraParaPuntos.render("" + str(tiempo_transcurrido), 1, constantes.NEGRO)
+        pantalla.blit(relojmarcador, (450, 810))
+        pantalla.blit(textotiempo, (500, 810))
 
         
         

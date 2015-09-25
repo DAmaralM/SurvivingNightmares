@@ -1,6 +1,7 @@
 import pygame
 import constantes
 import platforma
+import artefactos
 import enemigos
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
@@ -21,7 +22,7 @@ class Habitacion_2(Level):
         Level.__init__(self, jugador)
 
         #Cargamos la imagen de fondo.
-        sprite_sheet_pantalla = SpriteSheet("imagenes/fondo.png")
+        sprite_sheet_pantalla = SpriteSheet("imagenes/fondoactualizado.png")
         
         # Carga de todos los sprite de la imagen hacia la derecha.
         imagen_2 = sprite_sheet_pantalla.obtener_imagen(1788,894, 896,894)
@@ -60,6 +61,24 @@ class Habitacion_2(Level):
             bloque.rect.y = plataforma[2]
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
+            
+            
+            
+        nivel_artefacto = [ [artefactos.ESCALERA, 656, 97]
+                 
+                 ]
+
+       
+
+        for artefactos1 in nivel_artefacto:
+            bloque_a = artefactos.Artefactos(artefactos1[0])
+            bloque_a.rect.x = artefactos1[1]
+            bloque_a.rect.y = artefactos1[2]
+            bloque_a.jugador = self.jugador
+            self.lista_artefactos.add(bloque_a)            
+            
+            
+            
         #Puntos
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 100
