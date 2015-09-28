@@ -17,6 +17,8 @@ class Jugador(pygame.sprite.Sprite):
     jugador_frame_up = []
     jugador_frame_down = []
 
+    puntos_por_nivel = 0
+
     llave = False
 
     # Direccion en la que va el jugador.
@@ -185,6 +187,7 @@ class Jugador(pygame.sprite.Sprite):
             una_comida.kill()
             self.puntos += 1
             una_comida.hacer_sonido()
+            self.puntos_por_nivel += 1
          
         lista_enemigos_a_obtener = pygame.sprite.spritecollide(self, self.nivel.lista_enemigos, False)
         for un_enemigo in lista_enemigos_a_obtener:
@@ -194,6 +197,7 @@ class Jugador(pygame.sprite.Sprite):
         puerta_para_cambiar_nivel = pygame.sprite.spritecollide(self, self.nivel.puerta, False)
         for a_puerta in puerta_para_cambiar_nivel:
             self.llave = True
+            self.puntos_por_nivel = 0
 
     def izquierda(self):
         """ Se llama cuando movemos hacia la izq. """

@@ -20,17 +20,21 @@ import enemigos
 
 def jugar(pygame, constantes, pantalla,jugador):
     
+    """ Clase principal en el que se debe ejecutar el juego. """
     
     tiempo_comienzo = time() + 100
     
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(jugador)
-    letraParaPuntos = pygame.font.Font(None, 64)
-    letraParaVidas = pygame.font.Font(None, 64)
+    letraParaPuntos = pygame.font.Font(None, 50)
+    letraParaVidas = pygame.font.Font(None, 50)
     letraParaGameOver = pygame.font.Font(None, 45)
     relojmarcador = pygame.image.load("imagenes/relojmarcador.png")
     puntosmarcador = pygame.image.load("imagenes/puntos.png")
     vidasmarcador = pygame.image.load("imagenes/vidas.png")
+    gameovertime = pygame.image.load("imagenes/gameovertime.png")
+    gameover = pygame.image.load("imagenes/gameover.png")
+
 # Creamos todos los niveles del juego
     lista_niveles = []
     lista_niveles.append(Habitacion_1(jugador_principal))
@@ -86,7 +90,7 @@ def jugar(pygame, constantes, pantalla,jugador):
         lista_sprites_activos.update()
         # Actualiza los elementos del nivel
         nivel_actual.update()
-        if (jugador_principal.llave):
+        if (jugador_principal.llave and jugador_principal.puntos_por_nivel == len(jugador_principal.nivel.lista_puntos)):
             if (numero_del_nivel_actual < len(lista_niveles) - 1):
                 numero_del_nivel_actual += 1
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
@@ -100,41 +104,37 @@ def jugar(pygame, constantes, pantalla,jugador):
         lista_sprites_activos.draw(pantalla)
         
         textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.NEGRO)
-        pantalla.blit(puntosmarcador, (100, 810))
-        pantalla.blit(textoPuntos, (150, 810))
+        pantalla.blit(puntosmarcador, (80, 820))
+        pantalla.blit(textoPuntos, (120, 820))
         
         textoVidas = letraParaVidas.render("" + str(jugador_principal.vidas), 1, constantes.ROJO)
-        pantalla.blit(vidasmarcador, (290, 810))
-        pantalla.blit(textoVidas, (340, 810))
+        pantalla.blit(vidasmarcador, (250, 810))
+        pantalla.blit(textoVidas, (290, 820))
         
         
         tiempo_transcurrido = int(tiempo_comienzo - time())
         textotiempo =letraParaPuntos.render("" + str(tiempo_transcurrido), 1, constantes.NEGRO)
-        pantalla.blit(relojmarcador, (450, 810))
-        pantalla.blit(textotiempo, (500, 810))
+        pantalla.blit(relojmarcador, (150, 820))
+        pantalla.blit(textotiempo, (200, 820))
 
         
         
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
-        if jugador_principal.vidas == 0:
+        if jugador_principal.vidas == 4:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover1 = letraParaGameOver.render("PERDISTE GATOH", 1, constantes.ROJO)
-            texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.AZUL)
-            pantalla.blit(texto_gameover1, [300, 250])
-            pantalla.blit(texto_gameover2, [100, 310])
+            pantalla.blit(gameover, [0,0])
             pygame.display.flip()
             pygame.event.wait()
             salir = True
+            menu(pygame, constantes, pantalla)
         
         if tiempo_transcurrido == 0:
             pantalla.fill(constantes.NEGRO)
-            texto_gameover1 = letraParaGameOver.render("TE QUEDASTE SIN TIEMPO", 1, constantes.ROJO)
-            texto_gameover2 = letraParaGameOver.render("Presiona cualquier tecla para volver a jugar", 1, constantes.ROJO)
-            pantalla.blit(texto_gameover1, [150, 250])
-            pantalla.blit(texto_gameover2, [125, 310])
+            pantalla.blit(gameovertime,[0,0] )
             pygame.display.flip()
             pygame.event.wait()
             salir = True
+            menu(pygame, constantes, pantalla)
         
         
         clock.tick(60)
@@ -143,8 +143,60 @@ def jugar(pygame, constantes, pantalla,jugador):
     #salgo del juego
     return True
 
+
+def menu(pygame, constantes, pantalla):
+    
+    pantalla.fill(constantes.NEGRO)
+    astrofrente = pygame.image.load("imagenes/astrofrente.png")
+    
+    menu_principal = cMenu(400, 300, 20, 10, "vertical", 3, pantalla, [("Jugar", 1, None), ("Creditos", 2, None), ("Salir", 3, None)])
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun", 5, None), ("Astro", 6, astrofrente), ("Volver", 7, None)])
+    menu_principal.set_center(True, True)
+    menu_principal.set_alignment("center", "center")
+    menuJugador.set_center(True, True)
+    menuJugador.set_alignment("center", "center")
+    estado = 0
+    estado_previo = 1
+    jugador = 1
+    opcion = []
+    salir = False
+    while not salir:
+        e = pygame.event.wait()
+        if estado != estado_previo:
+            pygame.event.post(pygame.event.Event(EVENT_CHANGE_STATE, key=0))
+            estado_previo = estado
+        if e.type == pygame.KEYDOWN or e.type == EVENT_CHANGE_STATE:
+    #Menu inicial
+            if estado == 0:
+                opcion, estado = menu_principal.update(e, estado)
+            elif estado == 1:
+                pantalla.fill(constantes.NEGRO)
+                opcion, estado = menuJugador.update(e, estado)
+                pygame.display.flip()
+            elif estado == 2:
+                pantalla.fill(constantes.NEGRO)
+                letraParaMarcador = pygame.font.Font(None, 36)
+                text = letraParaMarcador.render("Creditos", 1, constantes.BLANCO)
+                pantalla.blit(text, (100, 0))
+            elif estado == 3:
+                salir = True
+            elif estado == 5:
+                jugar(pygame, constantes, pantalla, 1)
+            elif estado == 6:
+                jugar(pygame, constantes, pantalla, 2)
+            elif estado == 7:
+                pantalla.fill(constantes.NEGRO)
+                estado = 0
+                #salir = jugar(pygame, constantes, pantalla)
+                pygame.display.flip()
+            #Opcion jugar
+        if e.type == pygame.QUIT:
+            salir = True
+        pygame.display.flip()
+        pygame.display.update(opcion)
+
 def main():
-    """ Clase principal en el que se debe ejecutar el juego. """
+
     pygame.init()
 
     # Configuramos el alto y largo de la pantalla
@@ -154,59 +206,9 @@ def main():
 
     pygame.display.set_caption("Surviving Nightmares")
     sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
-    sonido.play()
+    #sonido.play()
     
-    menu_principal = cMenu(400,300,20,10,"vertical",3,pantalla,[("Jugar",1,None),("Creditos",2,None),("Salir",3,None)])
-    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun",5,None),("Astro",6,None),("Volver",7,None)])
-    
-    menu_principal.set_center(True,True)
-    menu_principal.set_alignment("center", "center")
-    menuJugador.set_center(True,True)
-    menuJugador.set_alignment("center", "center")
-    estado = 0 
-    estado_previo = 1
-    jugador = 1
-    opcion = []
-    salir = False
-    
-    while (not salir): 
-        e = pygame.event.wait()
-        
-        if estado != estado_previo:
-            pygame.event.post(pygame.event.Event(EVENT_CHANGE_STATE, key = 0))
-            estado_previo = estado
-                       
-        if e.type == pygame.KEYDOWN or e.type == EVENT_CHANGE_STATE:
-            #Menu inicial
-            if estado == 0:
-                opcion, estado = menu_principal.update(e, estado)
-            #Opcion jugar
-            elif estado == 1:
-                pantalla.fill(constantes.NEGRO)
-                opcion, estado = menuJugador.update(e, estado)
-                pygame.display.flip()
-                #salir = jugar(pygame, constantes, pantalla)
-            elif estado == 2:
-                pantalla.fill(constantes.NEGRO)
-                letraParaMarcador = pygame.font.Font(None, 36)
-                text = letraParaMarcador.render("Creditos",1,constantes.BLANCO)
-                pantalla.blit(text, (100,0))              
-            elif estado == 3:
-                salir = True
-            elif estado == 5:
-                jugar(pygame, constantes, pantalla,1)
-            elif estado == 6:
-                jugar(pygame, constantes, pantalla,2)
-            elif estado == 7:
-                pantalla.fill(constantes.NEGRO)
-                estado = 0
-                pygame.display.flip()
-            
-        if e.type == pygame.QUIT:
-            salir = True 
-
-        pygame.display.flip()
-        pygame.display.update(opcion)
+    menu(pygame, constantes, pantalla)
 
         
     pygame.quit()
