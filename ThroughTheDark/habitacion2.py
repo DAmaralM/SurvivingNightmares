@@ -90,15 +90,7 @@ class Habitacion_2(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
             
-        puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 150
-        puntos.rect.y = 153
-        puntos.limite_izquierdo = 1350
-        puntos.limite_derecho = 1600
-        puntos.mover_x = 1
-        puntos.jugador = self.jugador
-        puntos.nivel = self
-        self.lista_puntos.add(puntos)
+
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 200
@@ -110,15 +102,7 @@ class Habitacion_2(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
-        puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 250
-        puntos.rect.y = 153
-        puntos.limite_izquierdo = 1350
-        puntos.limite_derecho = 1600
-        puntos.mover_x = 1
-        puntos.jugador = self.jugador
-        puntos.nivel = self
-        self.lista_puntos.add(puntos)
+
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 300
@@ -130,15 +114,7 @@ class Habitacion_2(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
-        puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 350
-        puntos.rect.y = 153
-        puntos.limite_izquierdo = 1350
-        puntos.limite_derecho = 1600
-        puntos.mover_x = 1
-        puntos.jugador = self.jugador
-        puntos.nivel = self
-        self.lista_puntos.add(puntos)
+
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 400
@@ -150,15 +126,7 @@ class Habitacion_2(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
-        puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 450
-        puntos.rect.y = 153
-        puntos.limite_izquierdo = 1350
-        puntos.limite_derecho = 1600
-        puntos.mover_x = 1
-        puntos.jugador = self.jugador
-        puntos.nivel = self
-        self.lista_puntos.add(puntos)
+
 
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 500
@@ -170,15 +138,7 @@ class Habitacion_2(Level):
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
-        puntos = Estrellas(ESTRELLA)
-        puntos.rect.x = 550
-        puntos.rect.y = 153
-        puntos.limite_izquierdo = 1350
-        puntos.limite_derecho = 1600
-        puntos.mover_x = 1
-        puntos.jugador = self.jugador
-        puntos.nivel = self
-        self.lista_puntos.add(puntos)
+
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 600
@@ -224,7 +184,7 @@ class Habitacion_2(Level):
         #Puntos de abajo
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 100
-        puntos.rect.y = 750
+        puntos.rect.y = 720 
         puntos.limite_izquierdo = 1350
         puntos.limite_derecho = 1600
         puntos.mover_x = 1
@@ -244,7 +204,7 @@ class Habitacion_2(Level):
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 750
-        puntos.rect.y = 750
+        puntos.rect.y = 720
         puntos.limite_izquierdo = 1350
         puntos.limite_derecho = 1600
         puntos.mover_x = 1

@@ -9,7 +9,7 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-ESTRELLA          = (0, 0, 34, 32)
+ESTRELLA          = (0, 0, 36, 67)
 
 #Hoy hicimos los sonidos y los puntos
 
@@ -19,7 +19,7 @@ class Estrellas(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet_data):
         """ Plataforma constructor."""
         pygame.sprite.Sprite.__init__(self)
-        sprite_sheet = SpriteSheet("imagenes/puntos.png")
+        sprite_sheet = SpriteSheet("imagenes/llave.png")
         self.sonido_comida = pygame.mixer.Sound("latidos.wav")
         
         # Grab the image for this platform

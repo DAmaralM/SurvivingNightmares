@@ -14,6 +14,7 @@ from habitacion6 import Habitacion_6
 
 from jugador import Jugador
 from time import time
+from funciones_spritesheet import SpriteSheet
 import enemigos
 
 
@@ -30,10 +31,11 @@ def jugar(pygame, constantes, pantalla,jugador):
     letraParaVidas = pygame.font.Font(None, 50)
     letraParaGameOver = pygame.font.Font(None, 45)
     relojmarcador = pygame.image.load("imagenes/relojmarcador.png")
-    puntosmarcador = pygame.image.load("imagenes/puntos.png")
+    puntosmarcador = pygame.image.load("imagenes/llave.png")
     vidasmarcador = pygame.image.load("imagenes/vidas.png")
     gameovertime = pygame.image.load("imagenes/gameovertime.png")
     gameover = pygame.image.load("imagenes/gameover.png")
+    
 
 # Creamos todos los niveles del juego
     lista_niveles = []
@@ -104,7 +106,7 @@ def jugar(pygame, constantes, pantalla,jugador):
         lista_sprites_activos.draw(pantalla)
         
         textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.NEGRO)
-        pantalla.blit(puntosmarcador, (80, 820))
+        pantalla.blit(puntosmarcador, (80, 810))
         pantalla.blit(textoPuntos, (120, 820))
         
         textoVidas = letraParaVidas.render("" + str(jugador_principal.vidas), 1, constantes.ROJO)
@@ -120,7 +122,7 @@ def jugar(pygame, constantes, pantalla,jugador):
         
         
         # TODO EL CODIGO PARA DIBUJAR DEBE IR POR ARRIBA DE ESTE COMENTARIO.
-        if jugador_principal.vidas == 4:
+        if jugador_principal.vidas == 0:
             pantalla.fill(constantes.NEGRO)
             pantalla.blit(gameover, [0,0])
             pygame.display.flip()
@@ -149,8 +151,12 @@ def menu(pygame, constantes, pantalla):
     pantalla.fill(constantes.NEGRO)
     astrofrente = pygame.image.load("imagenes/astrofrente.png")
     
+    
+    sprite_sheet = SpriteSheet("imagenes/sun.png")
+    sunfrente = sprite_sheet.obtener_imagen(81, 0, 81, 115)
+    
     menu_principal = cMenu(400, 300, 20, 10, "vertical", 3, pantalla, [("Jugar", 1, None), ("Creditos", 2, None), ("Salir", 3, None)])
-    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun", 5, None), ("Astro", 6, astrofrente), ("Volver", 7, None)])
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun", 5, sunfrente), ("Astro", 6, astrofrente), ("Volver", 7, None)])
     menu_principal.set_center(True, True)
     menu_principal.set_alignment("center", "center")
     menuJugador.set_center(True, True)
