@@ -20,7 +20,7 @@ class Estrellas(pygame.sprite.Sprite):
         """ Plataforma constructor."""
         pygame.sprite.Sprite.__init__(self)
         sprite_sheet = SpriteSheet("imagenes/llave.png")
-        self.sonido_comida = pygame.mixer.Sound("latidos.wav")
+        self.sonido_comida = pygame.mixer.Sound("sonidos/llaves.ogg")
         
         # Grab the image for this platform
         self.image = sprite_sheet.obtener_imagen(sprite_sheet_data[0],

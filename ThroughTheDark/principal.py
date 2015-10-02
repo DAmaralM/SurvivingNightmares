@@ -40,17 +40,17 @@ def jugar(pygame, constantes, pantalla,jugador):
 # Creamos todos los niveles del juego
     lista_niveles = []
     #lista_niveles.append(Habitacion_1(jugador_principal))
-    lista_niveles.append(Habitacion_2(jugador_principal))
-    lista_niveles.append(Habitacion_3(jugador_principal))
-    lista_niveles.append(Habitacion_4(jugador_principal))
-    lista_niveles.append(Habitacion_5(jugador_principal))
+    #lista_niveles.append(Habitacion_2(jugador_principal))
+    #lista_niveles.append(Habitacion_3(jugador_principal))
+    #lista_niveles.append(Habitacion_4(jugador_principal))
+    #lista_niveles.append(Habitacion_5(jugador_principal))
     lista_niveles.append(Habitacion_6(jugador_principal))
 # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
     nivel_actual = lista_niveles[numero_del_nivel_actual]
     lista_sprites_activos = pygame.sprite.Group()
     jugador_principal.nivel = nivel_actual
-    jugador_principal.rect.x = 340
+    jugador_principal.rect.x = 380
     jugador_principal.rect.y = 140
     lista_sprites_activos.add(jugador_principal)
 #Variable booleano que nos avisa cuando el usuario aprieta el boton salir.
@@ -110,14 +110,14 @@ def jugar(pygame, constantes, pantalla,jugador):
         pantalla.blit(textoPuntos, (120, 820))
         
         textoVidas = letraParaVidas.render("" + str(jugador_principal.vidas), 1, constantes.ROJO)
-        pantalla.blit(vidasmarcador, (250, 810))
-        pantalla.blit(textoVidas, (290, 820))
+        pantalla.blit(vidasmarcador, (260, 810))
+        pantalla.blit(textoVidas, (300, 820))
         
         
         tiempo_transcurrido = int(tiempo_comienzo - time())
         textotiempo =letraParaPuntos.render("" + str(tiempo_transcurrido), 1, constantes.NEGRO)
-        pantalla.blit(relojmarcador, (150, 820))
-        pantalla.blit(textotiempo, (200, 820))
+        pantalla.blit(relojmarcador, (160, 820))
+        pantalla.blit(textotiempo, (210, 820))
 
         
         

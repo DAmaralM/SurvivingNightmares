@@ -153,14 +153,14 @@ class Habitacion_3(Level):
         #Pasillo
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 740
-        puntos.rect.y = 745
+        puntos.rect.y = 740
         puntos.jugador = self.jugador
         puntos.nivel = self
         self.lista_puntos.add(puntos)
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 110
-        puntos.rect.y = 745
+        puntos.rect.y = 740
         puntos.jugador = self.jugador
         puntos.nivel = self
         self.lista_puntos.add(puntos)

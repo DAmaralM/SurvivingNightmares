@@ -9,7 +9,7 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-PUERTA = (0, 0, 16, 10)
+PUERTA = (20, 0, 16, 10)
 
 
 class Puerta(pygame.sprite.Sprite):
@@ -18,7 +18,7 @@ class Puerta(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet_data):
         """ puerta constructor."""
         pygame.sprite.Sprite.__init__(self)
-        sprite_sheet = SpriteSheet("imagenes/puerta.png")
+        sprite_sheet = SpriteSheetNegro("imagenes/puerta.png")
         # Grab the image for this platform
         self.image = sprite_sheet.obtener_imagen(sprite_sheet_data[0],
                                             sprite_sheet_data[1],

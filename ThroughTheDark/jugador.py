@@ -34,7 +34,11 @@ class Jugador(pygame.sprite.Sprite):
             Aca en donde se debe cargar el sprite sheet del jugador.
             Se debe cargar los sprite con movimiento hacia la izquierda y hacia la derecha.
         """
-
+        jugador_frame_izq = []
+        jugador_frame_der = []
+        jugador_frame_up = []
+        jugador_frame_down = []
+    
         pygame.sprite.Sprite.__init__(self)
         
         if jugador == 1:

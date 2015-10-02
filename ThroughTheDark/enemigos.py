@@ -66,6 +66,7 @@ class MovingPlatform(Enemigo):
 
         # Move left/right
         self.rect.x += self.mover_x
+        self.rect.y += self.mover_y
 
         pos = self.rect.x
         

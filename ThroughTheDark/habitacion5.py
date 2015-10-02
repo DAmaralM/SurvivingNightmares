@@ -1,9 +1,12 @@
 import pygame
 import constantes
 import platforma
+import enemigos
+
 from nivel import Level
 from funciones_spritesheet import SpriteSheet
 from puerta import PUERTA, Puerta
+from puntos import Estrellas, ESTRELLA
 
 
 class Habitacion_5(Level):
@@ -35,9 +38,21 @@ class Habitacion_5(Level):
         self.cambio_nivel_y = -16
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ #[platforma.GRASS_LEFT, , 500],
-                 ]
-
+        nivel = [[platforma.STONE, 420, 360],
+                 [platforma.STONE, 480, 360],
+                 [platforma.STONE, 480, 420],
+                 [platforma.STONE, 360, 360],
+                 [platforma.STONE, 480, 480],
+                 [platforma.STONE, 120, 360],
+                 [platforma.STONE, 180, 360],
+                 [platforma.STONE, 240, 360],
+                 [platforma.STONE, 240, 300],
+                 [platforma.STONE, 240, 240],
+                 [platforma.STONE, 120, 720],
+                 [platforma.STONE, 180, 720],
+                 [platforma.STONE, 240, 720],
+                 [platforma.STONE, 240, 660],
+                 [platforma.STONE, 240, 600],]
 
         # Se busca en la lista anterior creada y se le agregan las plataformas al nivel.
         for plataforma in nivel:
@@ -47,10 +62,36 @@ class Habitacion_5(Level):
             bloque.jugador = self.jugador
             self.lista_plataformas.add(bloque)
             
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 420
+        puntos.rect.y = 420
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)     
+ 
+ 
+            
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 170
+        puntos.rect.y = 270
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)      
+        
+        
+        puntos = Estrellas(ESTRELLA)
+        puntos.rect.x = 170
+        puntos.rect.y = 630
+        puntos.jugador = self.jugador
+        puntos.nivel = self
+        self.lista_puntos.add(puntos)         
+ 
+        
+
                 #puerta
         puerta = Puerta(PUERTA)
-        puerta.rect.x = 412
-        puerta.rect.y = 500
+        puerta.rect.x = 450
+        puerta.rect.y = 790
         
         self.puerta.add(puerta)
 
