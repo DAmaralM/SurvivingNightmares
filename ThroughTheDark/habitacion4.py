@@ -32,13 +32,23 @@ class Habitacion_4(Level):
         self.cambio_nivel_x = 396
         self.cambio_nivel_y = -16
         
-        self.fondo.set_colorkey(constantes.BLANCO)
-        self.limite_nivel = -2500
 
         # Lista con los bloques de plataformas, indicando la ubicacion x,y y el tipo 
-        nivel = [ #[platforma.GRASS_LEFT, , 500],
+        nivel = [
+                 [platforma.STONE,200 , 150],
+                 [platforma.STONE,260 , 100],
+                 [platforma.STONE,320 , 150],
+                 [platforma.STONE,260 , 220],
                  ]
-
+        
+        for plataforma in nivel:
+            bloque = platforma.Plataforma(plataforma[0])
+            bloque.rect.x = plataforma[1]
+            bloque.rect.y = plataforma[2]
+            bloque.jugador = self.jugador
+            self.lista_plataformas.add(bloque)
+            
+            
                 #puerta
         puerta = Puerta(PUERTA)
         puerta.rect.x = 80

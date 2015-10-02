@@ -39,7 +39,7 @@ def jugar(pygame, constantes, pantalla,jugador):
 
 # Creamos todos los niveles del juego
     lista_niveles = []
-    lista_niveles.append(Habitacion_1(jugador_principal))
+    #lista_niveles.append(Habitacion_1(jugador_principal))
     lista_niveles.append(Habitacion_2(jugador_principal))
     lista_niveles.append(Habitacion_3(jugador_principal))
     lista_niveles.append(Habitacion_4(jugador_principal))
@@ -150,6 +150,7 @@ def menu(pygame, constantes, pantalla):
     
     pantalla.fill(constantes.NEGRO)
     astrofrente = pygame.image.load("imagenes/astrofrente.png")
+    logo = pygame.image.load("imagenes/logo.png")
     
     
     sprite_sheet = SpriteSheet("imagenes/sun.png")
@@ -175,6 +176,7 @@ def menu(pygame, constantes, pantalla):
     #Menu inicial
             if estado == 0:
                 opcion, estado = menu_principal.update(e, estado)
+                pantalla.blit(logo,(240,20))
             elif estado == 1:
                 pantalla.fill(constantes.NEGRO)
                 opcion, estado = menuJugador.update(e, estado)

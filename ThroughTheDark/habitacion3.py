@@ -175,7 +175,7 @@ class Habitacion_3(Level):
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 110
-        puntos.rect.y = 270
+        puntos.rect.y = 250
         puntos.jugador = self.jugador
         puntos.nivel = self
         self.lista_puntos.add(puntos)
@@ -189,7 +189,7 @@ class Habitacion_3(Level):
         
         puntos = Estrellas(ESTRELLA)
         puntos.rect.x = 740
-        puntos.rect.y = 270
+        puntos.rect.y = 250
         puntos.jugador = self.jugador
         puntos.nivel = self
         self.lista_puntos.add(puntos)
@@ -229,6 +229,6 @@ class Habitacion_3(Level):
         
                         #puerta
         puerta = Puerta(PUERTA)
-        puerta.rect.x = 410
-        puerta.rect.y = 20
+        puerta.rect.x = 450
+        puerta.rect.y = 50
         self.puerta.add(puerta)

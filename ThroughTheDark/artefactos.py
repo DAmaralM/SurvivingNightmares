@@ -9,7 +9,7 @@ from funciones_spritesheet import *
 #   Ancho del sprite
 #   Alto del sprite
 
-ESCALERA            = (0, 0, 140, 90)
+ESCALERA            = (0, 0, 140, 40)
 POZO            = (140, 0, 120, 140)
 
 
