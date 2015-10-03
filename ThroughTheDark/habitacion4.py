@@ -123,9 +123,7 @@ class Habitacion_4(Level):
         ene.mover_x = 2
         ene.jugador = self.jugador
         ene.nivel = self
-        self.lista_enemigos.add(ene)                        
-                
-                
+        self.lista_enemigos.add(ene)                       
                 
                 
                 

@@ -84,7 +84,17 @@ class Habitacion_5(Level):
         puntos.rect.y = 630
         puntos.jugador = self.jugador
         puntos.nivel = self
-        self.lista_puntos.add(puntos)         
+        self.lista_puntos.add(puntos)
+    
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 620
+        ene.rect.y = 300
+        ene.limite_superior = 100
+        ene.limite_inferior = 700
+        ene.mover_y = 3
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_enemigos.add(ene)    
  
         
 

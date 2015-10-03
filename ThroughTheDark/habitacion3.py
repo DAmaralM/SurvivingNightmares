@@ -227,6 +227,16 @@ class Habitacion_3(Level):
         ene.nivel = self
         self.lista_enemigos.add(ene)
         
+        ene = enemigos.MovingPlatform()
+        ene.rect.x = 200
+        ene.rect.y = 700
+        ene.limite_izquierdo = -200
+        ene.limite_derecho = 150
+        ene.mover_x = 2
+        ene.jugador = self.jugador
+        ene.nivel = self
+        self.lista_enemigos.add(ene)
+        
                         #puerta
         puerta = Puerta(PUERTA)
         puerta.rect.x = 450

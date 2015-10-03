@@ -23,7 +23,7 @@ def jugar(pygame, constantes, pantalla,jugador):
     
     """ Clase principal en el que se debe ejecutar el juego. """
     
-    tiempo_comienzo = time() + 100
+    tiempo_comienzo = time() + 200
     
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(jugador)
@@ -39,11 +39,11 @@ def jugar(pygame, constantes, pantalla,jugador):
 
 # Creamos todos los niveles del juego
     lista_niveles = []
-    #lista_niveles.append(Habitacion_1(jugador_principal))
-    #lista_niveles.append(Habitacion_2(jugador_principal))
-    #lista_niveles.append(Habitacion_3(jugador_principal))
-    #lista_niveles.append(Habitacion_4(jugador_principal))
-    #lista_niveles.append(Habitacion_5(jugador_principal))
+    lista_niveles.append(Habitacion_1(jugador_principal))
+    lista_niveles.append(Habitacion_2(jugador_principal))
+    lista_niveles.append(Habitacion_3(jugador_principal))
+    lista_niveles.append(Habitacion_4(jugador_principal))
+    lista_niveles.append(Habitacion_5(jugador_principal))
     lista_niveles.append(Habitacion_6(jugador_principal))
 # Seteamos cual es el primer nivel.
     numero_del_nivel_actual = 0
@@ -147,17 +147,27 @@ def jugar(pygame, constantes, pantalla,jugador):
 
 
 def menu(pygame, constantes, pantalla):
-    
-    pantalla.fill(constantes.NEGRO)
-    astrofrente = pygame.image.load("imagenes/astrofrente.png")
+    #imagenes menu
+    fondomenu = pygame.image.load("imagenes/menuimagenes/fondomenu.png")
     logo = pygame.image.load("imagenes/logo.png")
+    jugarb = pygame.image.load("imagenes/menuimagenes/jugar.png")
+    historia = pygame.image.load("imagenes/menuimagenes/historia.png")
+    creditos = pygame.image.load("imagenes/menuimagenes/creditos.png")
+    salirboton = pygame.image.load("imagenes/menuimagenes/salir.png")
+    historiaimagen = pygame.image.load("imagenes/menuimagenes/historiaimagen.png")
     
     
+    
+    astrofrente = pygame.image.load("imagenes/astrofrente.png")
     sprite_sheet = SpriteSheet("imagenes/sun.png")
     sunfrente = sprite_sheet.obtener_imagen(81, 0, 81, 115)
     
-    menu_principal = cMenu(400, 300, 20, 10, "vertical", 3, pantalla, [("Jugar", 1, None), ("Creditos", 2, None), ("Salir", 3, None)])
-    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("Sun", 5, sunfrente), ("Astro", 6, astrofrente), ("Volver", 7, None)])
+    pantalla.blit(fondomenu,(0,0))
+    
+    menu_principal = cMenu(400, 300, 20, 10, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("Volver", 7, None)])
+    menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("Volver", 7, None)])
+   
     menu_principal.set_center(True, True)
     menu_principal.set_alignment("center", "center")
     menuJugador.set_center(True, True)
@@ -175,28 +185,35 @@ def menu(pygame, constantes, pantalla):
         if e.type == pygame.KEYDOWN or e.type == EVENT_CHANGE_STATE:
     #Menu inicial
             if estado == 0:
+                pantalla.blit(fondomenu,(0,0))
                 opcion, estado = menu_principal.update(e, estado)
-                pantalla.blit(logo,(240,20))
+                pantalla.blit(logo, (215,40))
+                pygame.display.flip()
+
             elif estado == 1:
                 pantalla.fill(constantes.NEGRO)
+                pantalla.blit(fondomenu,(0,0))
                 opcion, estado = menuJugador.update(e, estado)
                 pygame.display.flip()
             elif estado == 2:
-                pantalla.fill(constantes.NEGRO)
                 letraParaMarcador = pygame.font.Font(None, 36)
-                text = letraParaMarcador.render("Creditos", 1, constantes.BLANCO)
+                text = letraParaMarcador.render("work in progress...", 1, constantes.BLANCO)
                 pantalla.blit(text, (100, 0))
+                opcion, estado = menuHistoria.update(e, estado)
             elif estado == 3:
-                salir = True
+                pantalla.fill(constantes.NEGRO)
+                pantalla.blit(historiaimagen,(0,0))
+                opcion, estado = menuHistoria.update(e, estado)
             elif estado == 5:
                 jugar(pygame, constantes, pantalla, 1)
             elif estado == 6:
                 jugar(pygame, constantes, pantalla, 2)
             elif estado == 7:
-                pantalla.fill(constantes.NEGRO)
                 estado = 0
-                #salir = jugar(pygame, constantes, pantalla)
                 pygame.display.flip()
+            elif estado == 8:
+                salir = True
+                
             #Opcion jugar
         if e.type == pygame.QUIT:
             salir = True
@@ -214,7 +231,7 @@ def main():
 
     pygame.display.set_caption("Surviving Nightmares")
     sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
-    #sonido.play()
+    sonido.play()
     
     menu(pygame, constantes, pantalla)
 
