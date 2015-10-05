@@ -14,7 +14,8 @@ from habitacion6 import Habitacion_6
 
 from jugador import Jugador
 from time import time
-from funciones_spritesheet import SpriteSheet
+from funciones_spritesheet import *
+
 import enemigos
 
 
@@ -128,7 +129,7 @@ def jugar(pygame, constantes, pantalla,jugador):
             pygame.display.flip()
             pygame.event.wait()
             salir = True
-            menu(pygame, constantes, pantalla)
+            menuPrincipal(pygame, constantes, pantalla)
         
         if tiempo_transcurrido == 0:
             pantalla.fill(constantes.NEGRO)
@@ -136,7 +137,7 @@ def jugar(pygame, constantes, pantalla,jugador):
             pygame.display.flip()
             pygame.event.wait()
             salir = True
-            menu(pygame, constantes, pantalla)
+            menuPrincipal(pygame, constantes, pantalla)
         
         
         clock.tick(60)
@@ -146,15 +147,17 @@ def jugar(pygame, constantes, pantalla,jugador):
     return True
 
 
-def menu(pygame, constantes, pantalla):
-    #imagenes menu
+def menuPrincipal(pygame, constantes, pantalla):
+    #imagenes menuPrincipal
     fondomenu = pygame.image.load("imagenes/menuimagenes/fondomenu.png")
     logo = pygame.image.load("imagenes/logo.png")
     jugarb = pygame.image.load("imagenes/menuimagenes/jugar.png")
-    historia = pygame.image.load("imagenes/menuimagenes/historia.png")
-    creditos = pygame.image.load("imagenes/menuimagenes/creditos.png")
+    historia = pygame.image.load("imagenes/menuimagenes/historiaboton.png")
+    creditos = pygame.image.load("imagenes/menuimagenes/creditosboton.png")
     salirboton = pygame.image.load("imagenes/menuimagenes/salir.png")
-    historiaimagen = pygame.image.load("imagenes/menuimagenes/historiaimagen.png")
+    sprite_sheeeet = SpriteSheetnocolor("imagenes/menuimagenes/historia.png")
+    historiaimagen = sprite_sheeeet.obtener_imagen(165,0,894,896)
+    
     
     
     
@@ -165,7 +168,7 @@ def menu(pygame, constantes, pantalla):
     pantalla.blit(fondomenu,(0,0))
     
     menu_principal = cMenu(400, 300, 20, 10, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
-    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 4, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("Volver", 7, None)])
+    menuJugador = cMenu(30, 350, 100, 5, "horizontal", 3, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("Volver", 7, None)])
     menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("Volver", 7, None)])
    
     menu_principal.set_center(True, True)
@@ -233,7 +236,7 @@ def main():
     sonido = pygame.mixer.Sound("sonidos/fondo-sonido.ogg")
     sonido.play()
     
-    menu(pygame, constantes, pantalla)
+    menuPrincipal(pygame, constantes, pantalla)
 
         
     pygame.quit()

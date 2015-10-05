@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="HISTORIA.svg">
+   sodipodi:docname="Historia-SN.svg">
   <defs
      id="defs4">
     <filter
@@ -38,11 +38,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="500.71008"
-     inkscape:cy="371.98917"
+     inkscape:zoom="0.35"
+     inkscape:cx="382.27028"
+     inkscape:cy="411.27332"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g3951"
      showgrid="false"
      inkscape:window-width="1223"
      inkscape:window-height="1000"
@@ -57,6 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -75,8 +76,10 @@
            height="48.57143"
            x="345.71429"
            y="563.79077" /></flowRegion><flowPara
-         id="flowPara3005"></flowPara></flowRoot>    <g
-       id="g3951">
+         id="flowPara3005" /></flowRoot>    <g
+       id="g3951"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          transform="translate(0,156.36218)"
          y="-1.1428577"
@@ -87,7 +90,7 @@
          style="fill:#000000;fill-opacity:1;stroke:none" />
       <path
          transform="matrix(1.7782006,0,0,3.4467099,-262.92873,-652.22316)"
-         d="m 678,366.36218 a 283.5,62 0 1 1 -567,0 283.5,62 0 1 1 567,0 z"
+         d="m 678,366.36218 c 0,34.24166 -126.92727,62 -283.5,62 -156.57273,0 -283.5,-27.75834 -283.5,-62 0,-34.24165 126.92727,-62 283.5,-62 156.57273,0 283.5,27.75835 283.5,62 z"
          sodipodi:ry="62"
          sodipodi:rx="283.5"
          sodipodi:cy="366.36218"
@@ -98,79 +101,79 @@
       <text
          sodipodi:linespacing="125%"
          id="text3007"
-         y="430.58301"
-         x="449.06183"
-         style="font-size:35.07034302px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         y="251.96284"
+         x="449.16992"
+         style="font-size:37.84265518px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:42.9759903px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
-           y="430.58301"
-           x="449.06183"
+           style="font-size:46.37324524000000281px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="251.96284"
+           x="449.16992"
            id="tspan3009"
            sodipodi:role="line">“No puedes despertarte, esto no es un sueño.”</tspan><tspan
-           style="font-size:24.30592537px;text-align:center;text-anchor:middle;fill:#ffffff"
+           style="font-size:26.22731018px;text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan3011"
-           y="484.30301"
-           x="449.06183"
+           y="309.92938"
+           x="449.16992"
            sodipodi:role="line" /><tspan
            id="tspan3059"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="520.51196"
-           x="452.63757"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="364.74289"
+           x="453.42709"
            sodipodi:role="line">No quería abrir los ojos, tenía esta sensación de advertencia corriendo </tspan><tspan
            id="tspan3063"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="552.74396"
-           x="452.63757"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="418.69537"
+           x="453.42709"
            sodipodi:role="line">por mis venas. </tspan><tspan
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
            id="tspan3015"
-           y="584.97595"
-           x="449.06183"
+           y="472.64789"
+           x="449.16992"
            sodipodi:role="line">De todas formas tenía que hacerlo, no podía dormir por el resto de mi vida.</tspan><tspan
            id="tspan3077"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="617.20795"
-           x="452.63757"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="526.6004"
+           x="453.42709"
            sodipodi:role="line">Vaya arrepentimiento; '¿Qué era este lugar?' '¿Dónde estoy?' Fueron las </tspan><tspan
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
            id="tspan3021"
-           y="649.43994"
-           x="452.63757"
+           y="580.55292"
+           x="453.42709"
            sodipodi:role="line">primeras cosas que pasaron por mi cabeza antes de que vea una cosa </tspan><tspan
            id="tspan3087"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="681.67194"
-           x="452.63754"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="634.50537"
+           x="453.42709"
            sodipodi:role="line">viscosa y verde acercándose a mí, a medida que la sentía más cerca, </tspan><tspan
            id="tspan3057"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="713.90393"
-           x="452.63757"
-           sodipodi:role="line">podía escuchar algunos de los pensamientos obscuros que pasaban por mi </tspan><tspan
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="688.45789"
+           x="453.42709"
+           sodipodi:role="line">podía escuchar algunos de los pensamientos oscuros que pasaban por mi </tspan><tspan
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
            id="tspan3023"
-           y="746.13593"
-           x="452.63757"
+           y="742.4104"
+           x="453.42709"
            sodipodi:role="line">cabeza cada día... Ahora el terror recorre mi cuerpo, y la adrenalina se </tspan><tspan
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
            id="tspan3017"
-           y="778.36792"
-           x="452.63757"
+           y="796.36292"
+           x="453.42709"
            sodipodi:role="line">apodera de mi.Voy a intentar sobrevivir a esto, mientras pueda. </tspan><tspan
            id="tspan3101"
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
-           y="810.59991"
-           x="452.63757"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
+           y="850.31543"
+           x="453.42709"
            sodipodi:role="line">Esto es como una pesadilla y estoy perdido en ella. </tspan><tspan
-           style="font-size:25.78559494px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:Century Schoolbook L;-inkscape-font-specification:Century Schoolbook L Medium"
+           style="font-size:43.16200256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;font-family:'1313 MockingbiRd Lane';-inkscape-font-specification:'1313 MockingbiRd Lane'"
            id="tspan3025"
-           y="842.83191"
-           x="449.06183"
+           y="904.26788"
+           x="449.16992"
            sodipodi:role="line">Mas sin importar qué pase, no me voy a detener... Voy a salir.</tspan><tspan
            style="text-align:center;text-anchor:middle"
            id="tspan3019"
-           y="875.0639"
-           x="449.06183"
+           y="958.2204"
+           x="449.16992"
            sodipodi:role="line" /></text>
     </g>
   </g>
