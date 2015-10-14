@@ -91,6 +91,11 @@ def jugar(pygame, constantes, pantalla,jugador):
         
         # Actualiza todo el jugador
         lista_sprites_activos.update()
+        
+        
+        
+        
+        
         # Actualiza los elementos del nivel
         nivel_actual.update()
         if (jugador_principal.llave and jugador_principal.puntos_por_nivel == len(jugador_principal.nivel.lista_puntos)):
@@ -98,21 +103,45 @@ def jugar(pygame, constantes, pantalla,jugador):
                 numero_del_nivel_actual += 1
                 nivel_actual = lista_niveles[numero_del_nivel_actual]
                 jugador_principal.nivel = nivel_actual
+                jugador_principal.llave = False
+            if numero_del_nivel_actual == 1 : 
                 jugador_principal.rect.x = 400
                 jugador_principal.rect.y = 600
-                jugador_principal.llave = False
+            if numero_del_nivel_actual == 2 :
+                jugador_principal.rect.x = 620
+                jugador_principal.rect.y = 400
+            if numero_del_nivel_actual == 3 :
+                jugador_principal.rect.x = 419
+                jugador_principal.rect.y = 677
+            if numero_del_nivel_actual == 4 :
+                jugador_principal.rect.x = 710
+                jugador_principal.rect.y = 400
+            if numero_del_nivel_actual == 5 :
+                jugador_principal.rect.x = 436
+                jugador_principal.rect.y = 100
+                
         print "Posicion x", jugador_principal.rect.x, "Posicion y", jugador_principal.rect.y
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         # TODO EL CODIGO PARA DIBUJAR DEBE IR DEBAJO DE ESTE COMENTARIO.
         nivel_actual.draw(pantalla)
         lista_sprites_activos.draw(pantalla)
         
         textoPuntos = letraParaPuntos.render("" + str(jugador_principal.puntos), 1, constantes.NEGRO)
-        pantalla.blit(puntosmarcador, (80, 810))
-        pantalla.blit(textoPuntos, (120, 820))
+        pantalla.blit(puntosmarcador, (70, 810))
+        pantalla.blit(textoPuntos, (110, 820))
         
         textoVidas = letraParaVidas.render("" + str(jugador_principal.vidas), 1, constantes.ROJO)
-        pantalla.blit(vidasmarcador, (260, 810))
-        pantalla.blit(textoVidas, (300, 820))
+        pantalla.blit(vidasmarcador, (280, 810))
+        pantalla.blit(textoVidas, (325, 820))
         
         
         tiempo_transcurrido = int(tiempo_comienzo - time())
@@ -169,7 +198,8 @@ def menuPrincipal(pygame, constantes, pantalla):
     pantalla.blit(fondomenu,(0,0))
     
     menu_principal = cMenu(400, 300, 20, 10, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
-    menuJugador = cMenu(215, 650, 270, 5, "horizontal", 3, pantalla, [("", 5, sunfrente), ("", 6, astrofrente)])
+    pantalla.blit(seleccionpj, (0,0))
+    menuJugador = cMenu(215, 600, 290, 55, "horizontal", 2, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("Volver", 7, None)])
     menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("Volver", 7, None)])
    
     menu_principal.set_center(True, True)
@@ -184,28 +214,41 @@ def menuPrincipal(pygame, constantes, pantalla):
         if estado != estado_previo:
             pygame.event.post(pygame.event.Event(EVENT_CHANGE_STATE, key=0))
             estado_previo = estado
-        if e.type == pygame.KEYDOWN or e.type == EVENT_CHANGE_STATE:
-    #Menu inicial
+
             if estado == 0:
+                pantalla.fill(constantes.NEGRO)
                 pantalla.blit(fondomenu,(0,0))
-                opcion, estado = menu_principal.update(e, estado)
                 pantalla.blit(logo, (215,40))
                 pygame.display.flip()
-
             elif estado == 1:
-                pantalla.fill(constantes.NEGRO)
                 pantalla.blit(seleccionpj,(0,0))
                 pantalla.blit(logo, (215,40))
-                opcion, estado = menuJugador.update(e, estado)
                 pygame.display.flip()
             elif estado == 2:
+                pantalla.fill(constantes.NEGRO)
                 letraParaMarcador = pygame.font.Font(None, 36)
                 text = letraParaMarcador.render("work in progress...", 1, constantes.BLANCO)
                 pantalla.blit(text, (100, 0))
-                opcion, estado = menuHistoria.update(e, estado)
+                pygame.display.flip()
             elif estado == 3:
                 pantalla.fill(constantes.NEGRO)
                 pantalla.blit(historiaimagen,(0,0))
+            elif estado == 7:
+                estado = 0
+                pygame.display.flip()
+            elif estado == 8:
+                salir = True
+        
+        
+        if e.type == pygame.KEYDOWN or e.type == EVENT_CHANGE_STATE:
+    #Menu inicial
+            if estado == 0:
+                opcion, estado = menu_principal.update(e, estado)
+            elif estado == 1:
+                opcion, estado = menuJugador.update(e, estado)
+            elif estado == 2:
+                opcion, estado = menuHistoria.update(e, estado)
+            elif estado == 3:
                 opcion, estado = menuHistoria.update(e, estado)
             elif estado == 5:
                 jugar(pygame, constantes, pantalla, 1)
@@ -222,6 +265,11 @@ def menuPrincipal(pygame, constantes, pantalla):
             salir = True
         pygame.display.flip()
         pygame.display.update(opcion)
+
+
+
+
+
 
 def main():
 

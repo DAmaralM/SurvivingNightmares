@@ -217,21 +217,12 @@ class Habitacion_2(Level):
         ene.rect.x = 300
         ene.rect.y = 200
         ene.limite_izquierdo = -3
-        ene.limite_derecho = 285
+        ene.limite_derecho = 500
         ene.mover_x = 2
         ene.jugador = self.jugador
         ene.nivel = self
         self.lista_enemigos.add(ene)
         
-        ene = enemigos.MovingPlatform()
-        ene.rect.x = 600
-        ene.rect.y = 200
-        ene.limite_izquierdo = 400
-        ene.limite_derecho = 600
-        ene.mover_x = 2
-        ene.jugador = self.jugador
-        ene.nivel = self
-        self.lista_enemigos.add(ene)
         
         # Se agrega una plataforma en movimiento.
         bloque = platforma.PlataformaConMovimiento(platforma.STONE)
