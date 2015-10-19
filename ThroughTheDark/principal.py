@@ -188,6 +188,7 @@ def menuPrincipal(pygame, constantes, pantalla):
     sprite_sheeeet = SpriteSheetnocolor("imagenes/menuimagenes/historia.png")
     historiaimagen = sprite_sheeeet.obtener_imagen(165,0,894,896)
     seleccionpj = pygame.image.load("imagenes/menuimagenes/seleccionpj.png")
+    creditosimagen = pygame.image.load("imagenes/menuimagenes/creditos.png")
     
     
     
@@ -219,17 +220,15 @@ def menuPrincipal(pygame, constantes, pantalla):
             if estado == 0:
                 pantalla.fill(constantes.NEGRO)
                 pantalla.blit(fondomenu,(0,0))
-                pantalla.blit(logo, (215,40))
+                pantalla.blit(logo, (215,15))
                 pygame.display.flip()
             elif estado == 1:
                 pantalla.blit(seleccionpj,(0,0))
-                pantalla.blit(logo, (215,40))
+                pantalla.blit(logo, (215,15))
                 pygame.display.flip()
             elif estado == 2:
                 pantalla.fill(constantes.NEGRO)
-                letraParaMarcador = pygame.font.Font(None, 36)
-                text = letraParaMarcador.render("work in progress...", 1, constantes.BLANCO)
-                pantalla.blit(text, (100, 0))
+                pantalla.blit(creditosimagen, (0,0))
                 pygame.display.flip()
             elif estado == 3:
                 pantalla.fill(constantes.NEGRO)
