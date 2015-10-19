@@ -198,13 +198,12 @@ def menuPrincipal(pygame, constantes, pantalla):
     
     pantalla.blit(fondomenu,(0,0))
     
-    menu_principal = cMenu(400, 300, 20, 10, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
+    menu_principal = cMenu(400, 510, 20, 20, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
     pantalla.blit(seleccionpj, (0,0))
-    menuJugador = cMenu(215, 600, 290, 55, "horizontal", 2, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("", 7, volver)])
+    menuJugador = cMenu(215, 620, 105, 55, "horizontal", 3, pantalla, [("", 5, sunfrente),("", 7, volver), ("", 6, astrofrente)])
     menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("", 7, volver)])
    
-    menu_principal.set_center(True, True)
-    menu_principal.set_alignment("center", "center")
+    
     estado = 0
     estado_previo = 1
     jugador = 1
@@ -219,7 +218,7 @@ def menuPrincipal(pygame, constantes, pantalla):
             if estado == 0:
                 pantalla.fill(constantes.NEGRO)
                 pantalla.blit(fondomenu,(0,0))
-                pantalla.blit(logo, (215,40))
+                pantalla.blit(logo, (215,5))
                 pygame.display.flip()
             elif estado == 1:
                 pantalla.blit(seleccionpj,(0,0))
