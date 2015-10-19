@@ -186,7 +186,7 @@ def menuPrincipal(pygame, constantes, pantalla):
     volver = pygame.image.load("imagenes/menuimagenes/volver.png")
     salirboton = pygame.image.load("imagenes/menuimagenes/salir.png")
     sprite_sheeeet = SpriteSheetnocolor("imagenes/menuimagenes/historia.png")
-    historiaimagen = sprite_sheeeet.obtener_imagen(165,0,894,896)
+    historiaimagen = sprite_sheeeet.obtener_imagen(0,0,894,896)
     seleccionpj = pygame.image.load("imagenes/menuimagenes/seleccionpj.png")
     creditosimagen = pygame.image.load("imagenes/menuimagenes/creditos.png")
     
@@ -201,8 +201,9 @@ def menuPrincipal(pygame, constantes, pantalla):
     
     menu_principal = cMenu(400, 510, 20, 20, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
     pantalla.blit(seleccionpj, (0,0))
-    menuJugador = cMenu(215, 620, 105, 55, "horizontal", 3, pantalla, [("", 5, sunfrente),("", 7, volver), ("", 6, astrofrente)])
-    menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("", 7, volver)])
+    menuJugador = cMenu(215, 620, 100, 55, "horizontal", 3, pantalla, [("", 5, sunfrente),("", 7, volver), ("", 6, astrofrente)])
+    pantalla.blit(historiaimagen, (0,0))
+    menuHistoria = cMenu(600, 780, 20, 10, "vertical", 1, pantalla, [("", 7, volver)])
    
     
     estado = 0
