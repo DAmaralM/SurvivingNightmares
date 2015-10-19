@@ -179,10 +179,11 @@ def jugar(pygame, constantes, pantalla,jugador):
 def menuPrincipal(pygame, constantes, pantalla):
     #imagenes menuPrincipal
     fondomenu = pygame.image.load("imagenes/menuimagenes/fondomenu.png")
-    logo = pygame.image.load("imagenes/logo.png")
+    logo = pygame.image.load("imagenes/logosurvivingnightmares.png")
     jugarb = pygame.image.load("imagenes/menuimagenes/jugar.png")
     historia = pygame.image.load("imagenes/menuimagenes/historiaboton.png")
     creditos = pygame.image.load("imagenes/menuimagenes/creditosboton.png")
+    volver = pygame.image.load("imagenes/menuimagenes/volver.png")
     salirboton = pygame.image.load("imagenes/menuimagenes/salir.png")
     sprite_sheeeet = SpriteSheetnocolor("imagenes/menuimagenes/historia.png")
     historiaimagen = sprite_sheeeet.obtener_imagen(165,0,894,896)
@@ -199,8 +200,8 @@ def menuPrincipal(pygame, constantes, pantalla):
     
     menu_principal = cMenu(400, 300, 20, 10, "vertical", 4, pantalla, [("", 1, jugarb), ("", 2, creditos),("", 3, historia), ("", 8 , salirboton)])
     pantalla.blit(seleccionpj, (0,0))
-    menuJugador = cMenu(215, 600, 290, 55, "horizontal", 2, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("Volver", 7, None)])
-    menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("Volver", 7, None)])
+    menuJugador = cMenu(215, 600, 290, 55, "horizontal", 2, pantalla, [("", 5, sunfrente), ("", 6, astrofrente), ("", 7, volver)])
+    menuHistoria = cMenu(450, 700, 20, 10, "vertical", 1, pantalla, [("", 7, volver)])
    
     menu_principal.set_center(True, True)
     menu_principal.set_alignment("center", "center")
