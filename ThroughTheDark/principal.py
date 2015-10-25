@@ -15,7 +15,7 @@ from habitacion6 import Habitacion_6
 from jugador import Jugador
 from time import time
 from funciones_spritesheet import *
-
+from resize import Resize
 import enemigos
 
 
@@ -84,8 +84,7 @@ def jugar(pygame, constantes, pantalla,jugador):
                     jugador_principal.parar()
             #elif evento.type==VIDEORESIZE:
                 #pantalla=pygame.display.set_mode(evento.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
-                #fondo_escala = pygame.transform.scale(nivel_actual.fondo,evento.dict['size'])
-                #nivel_actual.fondo = fondo_escala
+                #fondo_escala = pygame.transform.scale(resize.listadeimagenes,evento.dict['size'])
                 #pantalla.blit(fondo_escala,(0,0))
                 #pygame.display.flip()
         
