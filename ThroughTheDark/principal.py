@@ -24,7 +24,7 @@ def jugar(pygame, constantes, pantalla,jugador):
     
     """ Clase principal en el que se debe ejecutar el juego. """
     
-    tiempo_comienzo = time() + 200
+    tiempo_comienzo = time() + 150
     
     # Creamos al jugador con la imagen p1_walk.png
     jugador_principal = Jugador(jugador)
