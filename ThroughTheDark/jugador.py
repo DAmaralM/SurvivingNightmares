@@ -42,6 +42,11 @@ class Jugador(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         if jugador == 1:
+            jugador_frame_izq = []
+            jugador_frame_der = []
+            jugador_frame_up = []
+            jugador_frame_down = []
+            
             sprite_sheet = SpriteSheet("imagenes/sun.png")
             imagen = sprite_sheet.obtener_imagen(271, 0, 77, 115)
             self.jugador_frame_der.append(imagen)
@@ -81,6 +86,10 @@ class Jugador(pygame.sprite.Sprite):
 
             
         elif jugador == 2:
+            jugador_frame_izq = []
+            jugador_frame_der = []
+            jugador_frame_up = []
+            jugador_frame_down = []
             sprite_sheet = SpriteSheet("imagenes/astro.png")
             imagen = sprite_sheet.obtener_imagen(0, 0, 74, 125)
             self.jugador_frame_der.append(imagen)
